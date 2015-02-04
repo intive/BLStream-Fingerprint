@@ -1,5 +1,5 @@
 = Hello, AsciiDoc!
-Doc Writer <doc@example.com>
+Hello Artur
 
 An introduction to http://asciidoc.org[AsciiDoc].
 
