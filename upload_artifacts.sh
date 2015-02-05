@@ -4,11 +4,12 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
   pwd
   ls
   
-#  git config --global user.email "travis@travis-ci.org"
-#  git config --global user.name "Travis"
-#  git clone --quiet https://${GH_TOKEN}@github.com/blstream/BLStream-Fingerprint.git
+  cd $HOME
+  git config --global user.email "travis@travis-ci.org"
+  git config --global user.name "Travis"
+  git clone https://${GH_TOKEN}@github.com/blstream/BLStream-Fingerprint.git
   
-#  cd BLStream-Fingerprint
+  cd BLStream-Fingerprint
 
   git add generated-docs
   git commit -m "Travis build $TRAVIS_BUILD_NUMBER"
