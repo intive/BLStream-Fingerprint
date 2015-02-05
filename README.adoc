@@ -1,49 +1,70 @@
 Documentation auto-generation engine: image:https://travis-ci.org/blstream/BLStream-Fingerprint.svg?branch=master[Build Status (Travis CI), link=https://travis-ci.org/blstream/BLStream-Fingerprint] +
-Latest version of generated docs: https://github.com/blstream/BLStream-Fingerprint/releases[on github]
+Latest version of generated docs: https://github.com/blstream/BLStream-Fingerprint/releases[releases on github]
 
 = BLStream-Fingerprint
 
 == Why the hell we decided to use AsciiDoc
 
-* We wanted to make writing as simple as possible, as simple as writing an email (that's why not LaTeX or DocBook).
-* At the same time powerful enough to be able to publish content as:
-** HTML 
-** PDF 
-** ebook (epub) 
-** or even as a regular, printed paper book 
-(that's why not Markdown).
-* Standard tools, popular in industry, used by professional publishers, e.g. http://chimera.labs.oreilly.com/about[O'Reilly].
-* Easy versionable, publicly available (GitHub), cross-platform, easily editable even directly on web page using only a browser (that's why not MS Word)
+.We wanted:
+* to make writing as simple as possible, as simple as writing an email (unlike LaTeX or DocBook);
+* at the same time powerful enough to be able to publish content as HTML, PDF, ePub or even as a regular, printed paper book 
+(unlike Markdown);
+* a cross-platform tool that primarly focuses on content, formatting can be applied later (unlike MS Word);
+* to have text easy versionable, publicly available, easily editable even directly on web page using only a browser (GitHub);
+* a standard tool, popular in industry, used by professional publishers, e.g. http://chimera.labs.oreilly.com/about[O'Reilly], https://github.com/aantonop/bitcoinbook[example of professional book].
 
 == Basic how-to
 
-Insightful introduction into AsciiDoc: http://asciidoctor.org/docs/asciidoc-writers-guide/.
+Insightful introduction into AsciiDoc: http://asciidoctor.org/docs/asciidoc-writers-guide[AsciiDoctor writers guide].
 Read it to learn:
 
 * Which editor to use
 * The basic structure of an AsciiDoc document
 * How to add other structural elements such as lists, block quotes and source code
 
-However, we need to define our own guidelines to make docs formatting consistent accross all articles. The basic rules are as follows:
+Other useful references: http://asciidoctor.org/docs/asciidoc-syntax-quick-reference[AsciiDoc quick reference], full http://asciidoctor.org/docs/user-manual[user manual]
 
-* I (ABE) recommend to use a text editor (Notepad++, Textmate, GEdit) + https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia?hl=en[browser plugin] for live preview
-* Main sections of the fingerprint, put to seprate AsciiDoc files are:
-** Development
-** Project Management
-** Quality Assurance
-* The top of each chapter file should begin with a chapter title preceded by two equals signs. It’s good practice to always include a unique ID string above the chapter title, surrounded in double brackets, for example: http://chimera.labs.oreilly.com/books/1230000000065/ch04.html#text_markup[src]
+For writing we recommend to use just your favourite text editor (Notepad++, Textmate, GEdit, Atom) + https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia?hl=en[browser plugin] for live preview.
+
+== Fingerprint conventions
+
+Inspired by http://chimera.labs.oreilly.com/books/1230000000065/ch04.html[O'Reilly guidelines], we need to define our own guidelines to make docs formatting consistent across all articles. That's because we want to be able to merge all articles together and publish book as a single entity. The basic rules are as follows:
+
+ * There is (surprisingly!) only single title of the book, so don't use header level 1 (=) in your articles
+ * Header level 2 (==) is reserved for book parts, which currently are:
+ ** Development
+ ** Project Management
+ ** Quality Assurance
+ * Each book part will be held in a separate file. 
+ * The parts (and table of contents, index, preface, etc) will be merged `(not implemented yet)` in a single file called `book.adoc` via include directive.
+ * Your article should start with a title preceded by three equals signs (===) - header level 3 . It needs to include a unique ID string above the article title, surrounded in double brackets, for example:
+
 [source]
 ----
-[[unique_chapter_id]] 
-== Chapter Title
-----
-* Within a chapter, the first and highest heading level uses three equals signs: http://chimera.labs.oreilly.com/books/1230000000065/ch04.html#text_markup[src]
-[source]
-----
-=== Top-Level Heading
+[[developement_unit_testing]] 
+== Unit testing
 ----
 
+== Technical details for nerds
 
+As http://en.wikipedia.org/wiki/AsciiDoc[wikipedia] states: 
 
+----
+"AsciiDoc was created in 2002 by Stuart Rackham who published tools (‘asciidoc’ and ‘a2x’), written in the Python programming language to convert plain-text, ‘human readable’ files to commonly used published document formats.[1]
 
+A Ruby implementation called ‘Asciidoctor’, released in 2013, is in use by GitHub[2] and also provides a gateway to Asciidoc use in the Java ecosystem."
+----
+
+For the time being we forget about Python based tools and use AsciiDoctor as the main AsciiDoc conversion engine. Why? 
+
+Firstly, AsciiDoctor *looks nice and modern*, see their http://asciidoctor.org/[home web page]. Secondly, while it is written in Ruby, it can run with Java only and therefore it's *cross-platform*, one script works everywhere and standard Java developer require *no additional software*. Thirdly, *build process is so standard* and easy that no additional software needs to be installed beforehand on CI servers like Jenkins or Travis (Java and Maven are built-in). Last but not least, you can have *life preview* with AsciiDoctorJS (as a plugin to your browser or standalone).
+
+Build is implemented in Maven, see https://github.com/blstream/BLStream-Fingerprint/blob/master/pom.xml[pom.xml] GitHub.
+
+CI server is Travis-CI, a powerful free service, provides seamless integration with GitHub and, among others, Maven build. You configure https://travis-ci.org/blstream/BLStream-Fingerprint[Travis build] via https://github.com/blstream/BLStream-Fingerprint/blob/master/.travis.yml[.travis.yml] file put to the main directory of your GitHub repo. Build consists of four main steps:
+
+ . clone GitHub repo with source files
+ . merge files to create single book `(not implemented yet)`
+ . convertion AsciiDoc sources => output formats (most important PDF)
+ . upload generated files to a repo (currently a new tag in the same repo)
 
