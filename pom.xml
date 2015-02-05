@@ -47,7 +47,7 @@
               </attributes>
             </configuration>
           </execution>
-          <!--execution>
+          <execution>
             <id>output-html</id>
             <phase>generate-resources</phase>
             <goals>
@@ -61,8 +61,8 @@
                     <linkcss>false</linkcss>
                 </attributes>
             </configuration>
-          </execution-->
-          <!--execution>
+          </execution>
+          <execution>
             <id>output-docbook</id>
             <phase>generate-resources</phase>
             <goals>
@@ -72,7 +72,7 @@
                 <backend>docbook</backend>
                 <doctype>book</doctype>
             </configuration>
-          </execution-->
+          </execution>
         </executions>
       </plugin>
     </plugins>
