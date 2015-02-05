@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>Hello, AsciiDoc!</title>
+<date>2015-02-05</date>
+</info>
+<chapter xml:id="_hello_asciidoc">
+<title>Hello, AsciiDoc!</title>
+<simpara>Doc Writer &lt;<link xlink:href="mailto:doc@example.com">doc@example.com</link>&gt;</simpara>
+<simpara>An introduction to <link xlink:href="http://asciidoc.org">AsciiDoc</link>.</simpara>
+<section xml:id="_first_section">
+<title>First Section</title>
+<simpara>A paragraph followed by a simple list.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>item 1</simpara>
+</listitem>
+<listitem>
+<simpara>item 2</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Here&#8217;s how you say &#8220;Hello, World!&#8221; in Ruby.</simpara>
+<formalpara>
+<title>A basic Ruby application</title>
+<para>
+<programlisting language="ruby" linenumbering="unnumbered">puts "Hello, World!" asdas sad as</programlisting>
+</para>
+</formalpara>
+<tip>
+<simpara>asciidoctor-fopub takes the pain out of converting a DocBook file to a PDF file like this one.
+All you need is a Java Development Kit (JDK) and this project.
+The rest of the software is fetched and configured by Gradle.</simpara>
+</tip>
+</section>
+</chapter>
+</book>
