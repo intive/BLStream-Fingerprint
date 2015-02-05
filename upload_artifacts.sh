@@ -15,7 +15,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
   git add -f .
   git commit -m "Travis build $TRAVIS_BUILD_NUMBER"
   git tag -a $TRAVIS_BUILD_NUMBER -m "Tag $TRAVIS_BUILD_NUMBER added" 
-  git push origin --tags
+#  git push origin --tags
 
   echo -e "Done push of new tag"
 fi
