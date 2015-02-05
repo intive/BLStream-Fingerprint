@@ -1,5 +1,49 @@
-
-image:https://travis-ci.org/blstream/BLStream-Fingerprint.svg?branch=master[Build Status (Travis CI), link=https://travis-ci.org/blstream/BLStream-Fingerprint] 
-
+[%hardbreaks]
+Status and link to documentation auto-generation engine: image:https://travis-ci.org/blstream/BLStream-Fingerprint.svg?branch=master[Build Status (Travis CI), link=https://travis-ci.org/blstream/BLStream-Fingerprint]
+Latest version of generated docs: https://github.com/blstream/BLStream-Fingerprint/releases[on github]
 
 = BLStream-Fingerprint
+
+== Why the hell we decided to use AsciiDoc
+
+* We wanted to make writing as simple as possible, as writing an email (that's why not LaTeX or DocBook).
+* At the same time powerful enough to be able to publish content as:
+** HTML 
+** PDF 
+** ebook (epub) 
+** or even as a regular, printed paper book 
+(that's why not Markdown).
+* Standard tools, popular in industry, used by professional publishers, e.g. http://chimera.labs.oreilly.com/about[O'Reilly].
+* Easy versionable, publicly available (GitHub), cross-platform, easily editable even directly on web page using only a browser (that's why not MS Word)
+
+== Basic how-to
+
+Insightful introduction into AsciiDoc: http://asciidoctor.org/docs/asciidoc-writers-guide/.
+Read it to learn:
+
+* Which editor to use
+* The basic structure of an AsciiDoc document
+* How to add other structural elements such as lists, block quotes and source code
+
+However, we need to define our own guidelines to make docs formatting consistent accross all articles. The basic rules are as follows:
+
+* Main sections of the finger print are:
+** Development
+** Project Management
+** Quality Assurance
+* The top of each chapter file should begin with a chapter title preceded by two equals signs. It’s good practice to always include a unique ID string above the chapter title, surrounded in double brackets, for example: http://chimera.labs.oreilly.com/books/1230000000065/ch04.html#text_markup[src]
+[source]
+----
+[[unique_chapter_id]] 
+== Chapter Title
+----
+* Within a chapter, the first and highest heading level uses three equals signs: http://chimera.labs.oreilly.com/books/1230000000065/ch04.html#text_markup[src]
+[source]
+----
+=== Top-Level Heading
+----
+
+
+
+
+

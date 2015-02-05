@@ -22,4 +22,3 @@ TIP: asciidoctor-fopub takes the pain out of converting a DocBook file to a PDF 
 All you need is a Java Development Kit (JDK) and this project.
 The rest of the software is fetched and configured by Gradle.
 
-
