@@ -1,12 +1,11 @@
-[%hardbreaks]
-Status and link to documentation auto-generation engine: image:https://travis-ci.org/blstream/BLStream-Fingerprint.svg?branch=master[Build Status (Travis CI), link=https://travis-ci.org/blstream/BLStream-Fingerprint]
+Status and link to documentation auto-generation engine: image:https://travis-ci.org/blstream/BLStream-Fingerprint.svg?branch=master[Build Status (Travis CI), link=https://travis-ci.org/blstream/BLStream-Fingerprint] +
 Latest version of generated docs: https://github.com/blstream/BLStream-Fingerprint/releases[on github]
 
-= BLStream-Fingerprint
+= BLStream-Fingerprint PMGUILD
 
 == Why the hell we decided to use AsciiDoc
 
-* We wanted to make writing as simple as possible, as writing an email (that's why not LaTeX or DocBook).
+* We wanted to make writing as simple as possible, as simple as writing an email (that's why not LaTeX or DocBook).
 * At the same time powerful enough to be able to publish content as:
 ** HTML 
 ** PDF 
@@ -27,7 +26,8 @@ Read it to learn:
 
 However, we need to define our own guidelines to make docs formatting consistent accross all articles. The basic rules are as follows:
 
-* Main sections of the finger print are:
+* I (ABE) recommend to use a text editor (Notepad++, Textmate, GEdit) + https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia?hl=en[browser plugin] for live preview
+* Main sections of the fingerprint, put to seprate AsciiDoc files are:
 ** Development
 ** Project Management
 ** Quality Assurance
