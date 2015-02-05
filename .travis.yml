@@ -1,4 +1,7 @@
 language: java
-script:
-  - mvn process-resources
+script: mvn process-resources
+env:
+  global:
+    secure: Hxv6hR/NqS6+f4quW9oSo4HwYqafEj2/jkB4rfg4Pur+fm3af9Pveu6CJxT0y8XZwBYkBsOBYZEYRrPhI4TIaXx57l7vvLvBVNa7mYfDdUvEHBxQex1yItjZH2175V8V1wl8OVgjAPBylLZVFWjXsVayRjBccF+mLkpGxvrpYdo=
+after_success: upload_artifacts.sh
 
