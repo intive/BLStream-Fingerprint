@@ -1,4 +1,7 @@
 language: java
+branches:
+  only:
+    - master
 script: mvn process-resources
 env:
   global:
