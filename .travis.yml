@@ -2,7 +2,7 @@ language: java
 branches:
   only:
     - master
-install: echo 'Skipping mvn install, just generating docs in next step'
+install: echo 'Skipping mvn install, travis weird policy requires install to run'
 script: mvn process-resources
 env:
   global:
