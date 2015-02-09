@@ -1,8 +1,12 @@
 == Development
 
-=== Easy infrastructure setup from nothing to running in <1h
+=== Easy infrastructure setup 
 
-=== Easy application setup (from nothing to running in <1h)
+from nothing to running in <1h
+
+=== Easy application setup 
+
+from nothing to running in <1h
 
 === Concurrency in application code accounted for
 
@@ -10,7 +14,10 @@
 
 === Application Monitoring
 
+[au="Andrzej Bednarz", ver="0.1", date="2015-02-09]
 === Unit Tests
+
+Unit testing is at the core of engineering practices in BLStream. It's not just a practice, it is a foundation to many others, more sophisticated techniques like <<Continuous Integration>>.
 
 === Scalability requirements known and accounted for
 
