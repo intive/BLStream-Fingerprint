@@ -1,1 +1,16 @@
-== Project managment
+== Project management
+
+=== Definition of Done
+=== Daily Standup
+=== Demo
+=== Scrum/Kanban Board
+=== Planning Meeting
+=== Retrospectives
+=== Retrospectives shared with the customer
+=== Project Practices Charter shared with the customer
+=== Collocated Team (all team members PM included)
+=== 3rd party libraries licences listed, approved
+=== Clean Backlog
+=== Responsive Product Owner
+=== Grooming
+=== BurnUp / BurnDown chart
