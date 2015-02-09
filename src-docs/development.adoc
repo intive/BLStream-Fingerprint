@@ -14,10 +14,15 @@ from nothing to running in <1h
 
 === Application Monitoring
 
+
 [au="Andrzej Bednarz", ver="0.1", date="2015-02-09]
 === Unit Tests
 
-Unit testing is at the core of engineering practices in BLStream. It's not just a practice, it is a foundation to many others, more sophisticated techniques like <<Continuous Integration>>.
+Unit testing is at the core of engineering practices in BLStream. It's not just a practice, it is a foundation on which many other more sophisticated practices are built. It would not only be impossible to apply techniques like <<Continuous Integration>> and many other kinds of automation, but also it would make http://en.wikipedia.org/wiki/Code_refactoring[code refactorings] and generally code maintenance much harder and error prone. 
+
+Unit testing 
+
+
 
 === Scalability requirements known and accounted for
 
@@ -29,7 +34,7 @@ Unit testing is at the core of engineering practices in BLStream. It's not just 
 
 === OWASP Top 10 in Definition of Done
 
-=== Authorisation model defined
+=== Authorization model defined
 
 === Continuous Integration
 
@@ -57,11 +62,11 @@ Unit testing is at the core of engineering practices in BLStream. It's not just 
 
 === CSS builder
 
-=== Static code analysis (Javascript)
+=== Static code analysis (JavaScript)
 
-=== Truely REST-ful interfaces
+=== Truly RESTful interfaces
 
-=== HTML validator
+=== HTML validation
 
 === Code Reviews
 

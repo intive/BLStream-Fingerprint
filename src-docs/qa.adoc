@@ -1,6 +1,5 @@
 == Quality assurance
 
-
 === Radiator
 
 === Defect Tracking System
