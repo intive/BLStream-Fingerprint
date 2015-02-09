@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>BLStream Fingerprint</title>
+<date>2015-02-09</date>
+</info>
+<chapter xml:id="_preface">
+<title>Preface</title>
+<simpara>BLStream Finger print is a set of practices applied in the company.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</chapter>
+<chapter xml:id="_project_management">
+<title>Project management</title>
+<section xml:id="_definition_of_done">
+<title>Definition of Done</title>
+
+</section>
+<section xml:id="_daily_standup">
+<title>Daily Standup</title>
+
+</section>
+<section xml:id="_demo">
+<title>Demo</title>
+
+</section>
+<section xml:id="_scrum_kanban_board">
+<title>Scrum/Kanban Board</title>
+
+</section>
+<section xml:id="_planning_meeting">
+<title>Planning Meeting</title>
+
+</section>
+<section xml:id="_retrospectives">
+<title>Retrospectives</title>
+
+</section>
+<section xml:id="_retrospectives_shared_with_the_customer">
+<title>Retrospectives shared with the customer</title>
+
+</section>
+<section xml:id="_project_practices_charter_shared_with_the_customer">
+<title>Project Practices Charter shared with the customer</title>
+
+</section>
+<section xml:id="_collocated_team_all_team_members_pm_included">
+<title>Collocated Team (all team members PM included)</title>
+
+</section>
+<section xml:id="_3rd_party_libraries_licences_listed_approved">
+<title>3rd party libraries licences listed, approved</title>
+
+</section>
+<section xml:id="_clean_backlog">
+<title>Clean Backlog</title>
+
+</section>
+<section xml:id="_responsive_product_owner">
+<title>Responsive Product Owner</title>
+
+</section>
+<section xml:id="_grooming">
+<title>Grooming</title>
+
+</section>
+<section xml:id="_burnup_burndown_chart">
+<title>BurnUp / BurnDown chart</title>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</chapter>
+<chapter xml:id="_development">
+<title>Development</title>
+<section xml:id="_first_section">
+<title>First Section</title>
+<simpara>A paragraph followed by a simple list.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>item 1</simpara>
+</listitem>
+<listitem>
+<simpara>item 2</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Here&#8217;s how you say &#8220;Hello, World!&#8221; in Ruby.</simpara>
+<formalpara>
+<title>A basic Ruby application</title>
+<para>
+<programlisting language="ruby" linenumbering="unnumbered">puts "Hello, World!" asdas sad as</programlisting>
+</para>
+</formalpara>
+<tip>
+<simpara>asciidoctor-fopub takes the pain out of converting a DocBook file to a PDF file like this one.
+All you need is a Java Development Kit (JDK) and this project.
+The rest of the software is fetched and configured by Gradle.</simpara>
+</tip>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</chapter>
+<chapter xml:id="_quality_assurance">
+<title>Quality assurance</title>
+<simpara>hello</simpara>
+</chapter>
+</book>
