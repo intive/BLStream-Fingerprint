@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>Development</title>
+<date>2015-02-09</date>
+</info>
+<chapter xml:id="_development">
+<title>Development</title>
+<section xml:id="_easy_infrastructure_setup">
+<title>Easy infrastructure setup</title>
+<simpara>from nothing to running in &lt;1h</simpara>
+</section>
+<section xml:id="_easy_application_setup">
+<title>Easy application setup</title>
+<simpara>from nothing to running in &lt;1h</simpara>
+</section>
+<section xml:id="_concurrency_in_application_code_accounted_for">
+<title>Concurrency in application code accounted for</title>
+
+</section>
+<section xml:id="_gui_style_guide_defined">
+<title>GUI Style Guide defined</title>
+
+</section>
+<section xml:id="_application_monitoring">
+<title>Application Monitoring</title>
+
+</section>
+<section xml:id="_unit_tests">
+<title>Unit Tests</title>
+<simpara>Unit testing is at the core of engineering practices in BLStream. It&#8217;s not just a practice, it is a foundation on which many other more sophisticated practices are built. It would not only be impossible to apply techniques like <xref linkend="_continuous_integration"/> and many other kinds of automation, but also it would make <link xlink:href="http://en.wikipedia.org/wiki/Code_refactoring">code refactorings</link> and generally code maintenance much harder and error prone.</simpara>
+<simpara>Unit testing</simpara>
+</section>
+<section xml:id="_scalability_requirements_known_and_accounted_for">
+<title>Scalability requirements known and accounted for</title>
+
+</section>
+<section xml:id="_performance_requirements_known_and_accounted_for">
+<title>Performance requirements known and accounted for</title>
+
+</section>
+<section xml:id="_static_code_analysis_backend">
+<title>Static code analysis (backend)</title>
+
+</section>
+<section xml:id="_application_events_logging">
+<title>Application events logging</title>
+
+</section>
+<section xml:id="_owasp_top_10_in_definition_of_done">
+<title>OWASP Top 10 in Definition of Done</title>
+
+</section>
+<section xml:id="_authorization_model_defined">
+<title>Authorization model defined</title>
+
+</section>
+<section xml:id="_continuous_integration">
+<title>Continuous Integration</title>
+
+</section>
+<section xml:id="_continuous_delivery">
+<title>Continuous Delivery</title>
+
+</section>
+<section xml:id="_continuous_deployment">
+<title>Continuous Deployment</title>
+
+</section>
+<section xml:id="_documentation_tracked_in_vcs">
+<title>Documentation tracked in VCS</title>
+
+</section>
+<section xml:id="_documentation_generated_during_ci">
+<title>Documentation generated during CI</title>
+
+</section>
+<section xml:id="_parts_of_the_documentation_generated_automatically">
+<title>Parts of the documentation generated automatically</title>
+
+</section>
+<section xml:id="_automatic_documentation_of_the_executed_tests">
+<title>Automatic documentation of the executed tests</title>
+
+</section>
+<section xml:id="_documentation_scope_agreed">
+<title>Documentation scope agreed</title>
+
+</section>
+<section xml:id="_js_application_framework">
+<title>JS application framework</title>
+
+</section>
+<section xml:id="_js_build_process">
+<title>JS Build process</title>
+
+</section>
+<section xml:id="_js_modules_dependency_management">
+<title>JS modules dependency management</title>
+
+</section>
+<section xml:id="_js_unit_test">
+<title>JS Unit test</title>
+
+</section>
+<section xml:id="_css_builder">
+<title>CSS builder</title>
+
+</section>
+<section xml:id="_static_code_analysis_javascript">
+<title>Static code analysis (JavaScript)</title>
+
+</section>
+<section xml:id="_truly_restful_interfaces">
+<title>Truly RESTful interfaces</title>
+
+</section>
+<section xml:id="_html_validation">
+<title>HTML validation</title>
+
+</section>
+<section xml:id="_code_reviews">
+<title>Code Reviews</title>
+
+</section>
+<section xml:id="_pair_programming">
+<title>Pair Programming</title>
+
+</section>
+<section xml:id="_test_driven_development">
+<title>Test Driven Development</title>
+
+</section>
+<section xml:id="_database_schema_versioning">
+<title>Database schema versioning</title>
+
+</section>
+<section xml:id="_database_data_versioning">
+<title>Database data versioning</title>
+
+</section>
+<section xml:id="_concurrency_for_db_writes">
+<title>Concurrency for DB writes</title>
+
+</section>
+<section xml:id="_version_control_system">
+<title>Version Control System</title>
+
+</section>
+<section xml:id="_branching_strategy">
+<title>Branching strategy</title>
+
+</section>
+</chapter>
+</book>
