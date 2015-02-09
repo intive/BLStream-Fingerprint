@@ -1,0 +1,18 @@
+
+= BLStream Fingerprint
+
+include::preface.adoc[]
+
+<<<
+include::management.adoc[]
+
+<<<
+include::development.adoc[]
+
+<<<
+include::qa.adoc[]
+
+
+
+
+

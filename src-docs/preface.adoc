@@ -1,0 +1,3 @@
+
+== Preface
+BLStream Finger print is a set of practices applied in the company.
