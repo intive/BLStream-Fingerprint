@@ -1,20 +1,75 @@
 == Development
-=== First Section
 
-A paragraph followed by a simple list.
+=== Easy infrastructure setup from nothing to running in <1h
 
-* item 1
-* item 2
+=== Easy application setup (from nothing to running in <1h)
 
-Here's how you say "`Hello, World!`" in Ruby.
+=== Concurrency in application code accounted for
 
-.A basic Ruby application
-[source,ruby]
-----
-puts "Hello, World!" asdas sad as
-----
+=== GUI Style Guide defined
 
-TIP: asciidoctor-fopub takes the pain out of converting a DocBook file to a PDF file like this one.
-All you need is a Java Development Kit (JDK) and this project.
-The rest of the software is fetched and configured by Gradle.
+=== Application Monitoring
+
+=== Unit Tests
+
+=== Scalability requirements known and accounted for
+
+=== Performance requirements known and accounted for
+
+=== Static code analysis (backend)
+
+=== Application events logging
+
+=== OWASP Top 10 in Definition of Done
+
+=== Authorisation model defined
+
+=== Continuous Integration
+
+=== Continuous Delivery
+
+=== Continuous Deployment
+
+=== Documentation tracked in VCS
+
+=== Documentation generated during CI
+
+=== Parts of the documentation generated automatically
+
+=== Automatic documentation of the executed tests
+
+=== Documentation scope agreed
+
+=== JS application framework
+
+=== JS Build process
+
+=== JS modules dependency management
+
+=== JS Unit test
+
+=== CSS builder
+
+=== Static code analysis (Javascript)
+
+=== Truely REST-ful interfaces
+
+=== HTML validator
+
+=== Code Reviews
+
+=== Pair Programming
+
+=== Test Driven Development
+
+=== Database schema versioning
+
+=== Database data versioning 
+
+=== Concurrency for DB writes
+
+=== Version Control System
+
+=== Branching strategy
+
 

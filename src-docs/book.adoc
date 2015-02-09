@@ -1,4 +1,3 @@
-
 = BLStream Fingerprint
 
 include::preface.adoc[]

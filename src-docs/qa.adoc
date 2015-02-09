@@ -1,3 +1,36 @@
 == Quality assurance
 
-hello
+
+=== Radiator
+
+=== Defect Tracking System
+
+=== Defined bug lifecycle
+
+=== At least 1 QA for every 4 developers
+
+=== Bug report template
+
+=== Bug triage meeting
+
+=== Smoke
+
+=== Integration
+
+=== Functional / Acceptance
+
+=== Spelling
+
+=== Security
+
+=== Performance
+
+=== Exploratory
+
+=== Usability
+
+=== Versioned repository of the test scenarios
+
+=== Pair testing
+
+
