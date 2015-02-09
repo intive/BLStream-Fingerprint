@@ -1,3 +1,7 @@
+:sectanchors:
+:idprefix:
+:idseparator: -
+:numbered:
 = BLStream Fingerprint
 
 include::preface.adoc[]
