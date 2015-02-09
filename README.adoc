@@ -36,13 +36,16 @@ Inspired by http://chimera.labs.oreilly.com/books/1230000000065/ch04.html[O'Reil
  ** Project Management
  ** Quality Assurance
  * Each book part will be held in a separate file. 
- * The parts (and table of contents, index, preface, etc) will be merged `(not implemented yet)` in a single file called `book.adoc` via include directive.
- * Your article should start with a title preceded by three equals signs (===) - header level 3 . It needs to include a unique ID string above the article title, surrounded in double brackets, for example:
+ * The parts (and table of contents, index, preface, etc) are merged in a single file called `book.adoc` via `include` directive.
+ * Your article should start with a title preceded by three equals signs (===) - header level 3. It should also contain author name, version of the article and date of last update, for example:
 
 [source]
 ----
-[[development_unit_testing]] 
-== Unit testing
+[au="Andrzej Bednarz", ver="0.1", date="2015-02-09]
+=== Unit Tests
+
+Unit tests are ...
+
 ----
 
 == Technical details for nerds
@@ -50,9 +53,9 @@ Inspired by http://chimera.labs.oreilly.com/books/1230000000065/ch04.html[O'Reil
 As http://en.wikipedia.org/wiki/AsciiDoc[wikipedia] states: 
 
 ----
-"AsciiDoc was created in 2002 by Stuart Rackham who published tools (‘asciidoc’ and ‘a2x’), written in the Python programming language to convert plain-text, ‘human readable’ files to commonly used published document formats.[1]
+"AsciiDoc was created in 2002 by Stuart Rackham who published tools (‘asciidoc’ and ‘a2x’), written in the Python programming language to convert plain-text, ‘human readable’ files to commonly used published document formats.
 
-A Ruby implementation called ‘Asciidoctor’, released in 2013, is in use by GitHub[2] and also provides a gateway to Asciidoc use in the Java ecosystem."
+A Ruby implementation called ‘Asciidoctor’, released in 2013, is in use by GitHub and also provides a gateway to Asciidoc use in the Java ecosystem."
 ----
 
 For the time being we forget about Python based tools and use AsciiDoctor as the main AsciiDoc conversion engine. Why? 
@@ -64,7 +67,6 @@ Build is implemented in Maven, see https://github.com/blstream/BLStream-Fingerpr
 CI server is Travis-CI, a powerful free service, provides seamless integration with GitHub and, among others, Maven build. You configure https://travis-ci.org/blstream/BLStream-Fingerprint[Travis build] via https://github.com/blstream/BLStream-Fingerprint/blob/master/.travis.yml[.travis.yml] file put to the main directory of your GitHub repo. Build consists of four main steps:
 
  . clone GitHub repo with source files
- . merge files to create single book `(not implemented yet)`
- . conversion AsciiDoc sources => output formats (most important PDF)
- . upload generated files to a repo (currently a new tag in the same repo)
+  . conversion AsciiDoc sources => output formats (most important PDF)
+ . upload generated files to a repo (currently a new https://github.com/blstream/BLStream-Fingerprint/releases[tag] in the same repo)
 
