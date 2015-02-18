@@ -28,7 +28,7 @@ There are many definitions of "unit test" in the industry, see e.g. http://marti
  * they run fast, in seconds rather than minutes
  * they are fine-grained, each test verifies single "thing" (in other words - there is one reason to fail).
 
-Implementation details of how we write unit tests vary, depending on the tools and technologies the project is using. Nevertheless, common goal is to end up with a system that has complete suite of tests which "cover" all functionalities of the system. Thanks to that we are able to clean the code and to improve it anytime, not worrying that we accidental broke something. After each change we can run our tests and make sure that all works as expected. That's really powerful. It leads to higher quality of the code, fewer bugs, faster development, happier programmers and - at the end - more satisfied customers.
+Implementation details of how we write unit tests vary, depending on the tools and technologies the project is using. Nevertheless, common goal is to end up with a system that has complete suite of tests which "cover" all functionalities of the system. Thanks to that we are able to clean the code and to improve it anytime, not worrying that we accidentally break something. After each change we can run our tests and make sure that all works as expected. That's really powerful. It leads to higher quality of the code, fewer bugs, faster development, happier programmers and - at the end - more satisfied customers.
 
 It also means that tests are not something additional, optional. They are required and are a very important part of the system.
 
@@ -131,7 +131,7 @@ The tests that we presented show also basic structure of the test, which consist
 
 Ideally, tests have only these 3 lines. Even if there is more to do in a test, it is always possible to refactor to these 3 lines.
 
-We also do, from time to time, other kinds of testing which also employ unit test tools (like JUnit). These could be for instance learning tests (that verify how external library works), low level detailed tests which drive design of implementation details (that are later deleted). Nevertheless they are not obligatory, they might be deleted when no longer needed, so all rules mentioned above do not apply here. We also sometimes employ unit testing tools for integration tests which is described in a separate article <<Integration tests>>.
+We also do, from time to time, other kinds of testing which also employ unit test tools (like JUnit). These could be for instance learning tests (that verify how external library works), low level detailed tests which drive design of implementation details. Nevertheless they are not obligatory, they might be deleted when no longer needed, so all rules mentioned above do not apply here. We also sometimes employ unit testing tools for integration tests which is described in a separate article <<Integration tests>>.
 
 ===== References
 List of online resources which go deeper into unit testing:
@@ -199,6 +199,14 @@ List of books:
 === Pair Programming
 
 === Test Driven Development
+
+===== Introduction
+
+===== When to apply
+
+===== In practice
+
+
 
 === Database schema versioning
 
