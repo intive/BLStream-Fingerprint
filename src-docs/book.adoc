@@ -2,6 +2,8 @@
 :idprefix:
 :idseparator: -
 :numbered:
+:imagesdir: images
+
 = BLStream Fingerprint
 
 include::preface.adoc[]

@@ -1,19 +1,6 @@
+:imagesdir: images
+
 == Development
-
-=== Easy infrastructure setup 
-
-from nothing to running in <1h
-
-=== Easy application setup 
-
-from nothing to running in <1h
-
-=== Concurrency in application code accounted for
-
-=== GUI Style Guide defined
-
-=== Application Monitoring
-
 
 [author="Andrzej Bednarz", ver="0.1-DRAFT"]
 === Unit Tests
@@ -109,7 +96,7 @@ As we see, tests use only public method `findItems` to verify both filtering and
 	}
 ----
 
-A change that is purely implementational, does not require tests to update. Tests remain stable, clean and are focused on behavior verification. 
+We made quite a big change, we removed 2 private methods but these are purely implementation details. No tests require re-implementation. We are free to refactor, to improve technical details, yet the tests remain clean and stable because they are focused on desired behavior. 
 
 The tests that we presented show also basic structure of the test, which consists of 3 main steps: _Given, When, Then_, as on the example below:
 
@@ -147,8 +134,59 @@ List of books:
 . http://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530
 . http://www.amazon.com/xUnit-Test-Patterns-Refactoring-Code/dp/0131495054
 
+[author="Andrzej Bednarz", ver="0.1-DRAFT"]
+=== Test Driven Development
+
+===== Introduction
+TDD is a way of developing software in which you write tests first, before implementing a functionality. What kind of tests? It's about unit tests as defined in article <<Unit Tests>>. However, TDD additionally requires to apply a set of rules (details are below). Thanks to TDD you get source code that is fully testable, fully covered by tests, code that you can trust with your life. It means you know exactly what your code is doing (tests are executable spec), you won't be afraid to clean code, improve it, introduce any change. Sounds great, doesn't it? It is not trivial to write code in TDD manner though, but let's firstly see what exactly we mean by TDD.
+
+===== How to do it?
+Apart from the general rule that you write tests before any production code, there are slight differences in details, of how you do TDD. We like Uncle's Bob approach most. He defines TDD as an activity performed in 4 cycles, see http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html[TheCyclesOfTDD].
+
+*Firstly*, you are not allowed to write a single line of production code without failing test. This is the lowest level rule expressed by so-called http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development[Three Laws of TDD]:
+
+IMPORTANT: 1. You must write a failing test before you write any production code. +
+2. You must not write more of a test than is sufficient to fail, or fail to compile. +
+3. You must not write more production code than is sufficient to make the currently failing test pass.
+
+*Secondly*, since _Getting software to work is only half of the job_ (Kent Beck), we need to clean (via refactoring) the code. Therefore once you completed a unit test (or a set of small tests), you need to have a look at code you developed from a little distance and think what to improve having long term maintainability in mind. This way of looking at development cycle is called _Red-Green-Refactor_. 
+
+image::red_green_refactor.jpg[red-green-refactor]
+
+Please note that it means we don't have any separate phase in the project called _refactoring_ or _code clean up_. Refactorings and care about code quality are continuous, inherent in development process. 
+
+*Thirdly*, even applying previous rules, it's easy to fall into troubles. You may come up with a test that forces you to write tons of production code or even to throw away your whole current implementation. Instead, you should work in an incremental, step-by-step manner. How we can achieve that? By making our implementation code more and more generic with every subsequent test. Our code should not only fulfill requirements imposed by tests, it should naturally flow into direction of generic solution for all possible tests. Also tests themselves could break this natural process. If a test requires _revolution_ in code maybe it's worth considering a smaller step. This cycle is called http://thecleancoder.blogspot.com/2010/11/craftsman-63-specifics-and-generics.html[Specific/Generic cycle] and should be considered every couple of tests. It definitely requires some practice and skills to get it right.
+
+*Fourthly*, while writing small test cases and small portions of code, it might be easy to loose the big picture. Therefore from time to time (say every couple of hours), we need to consider also if our code is in line with general architecture outline, e.g. if we don't call DB directly from a GUI component. Generally, our architectures tend to follow http://blog.8thlight.com/uncle-bob/2012/08/13/the-clean-architecture.html[Clean Architecture] principles and as such lead to universal solutions which are highly testable, provide separation of concerns, clearly define boundaries of the system and its internal components.
+
+In TDD tests are equally important as production code, therefore the same amount of care and attention should be paid to them. 
+
+===== When to apply?
+
+===== References
+
+. http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
+. http://blog.8thlight.com/uncle-bob/2013/09/23/Test-first.html
+. 
+. http://blog.8thlight.com/uncle-bob/2014/04/30/When-tdd-does-not-work.html
+
+
 
 === Integration tests
+
+=== Easy infrastructure setup 
+
+from nothing to running in <1h
+
+=== Easy application setup 
+
+from nothing to running in <1h
+
+=== Concurrency in application code accounted for
+
+=== GUI Style Guide defined
+
+=== Application Monitoring
 
 === Scalability requirements known and accounted for
 
@@ -197,16 +235,6 @@ List of books:
 === Code Reviews
 
 === Pair Programming
-
-=== Test Driven Development
-
-===== Introduction
-
-===== When to apply
-
-===== In practice
-
-
 
 === Database schema versioning
 
