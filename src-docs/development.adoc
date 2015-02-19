@@ -17,15 +17,15 @@ There are many definitions of "unit test" in the industry, see e.g. http://marti
 
 Implementation details of how we write unit tests vary, depending on the tools and technologies the project is using. Nevertheless, common goal is to end up with a system that has complete suite of tests which "cover" all functionalities of the system. Thanks to that we are able to clean the code and to improve it anytime, not worrying that we accidentally break something. After each change we can run our tests and make sure that all works as expected. That's really powerful. It leads to higher quality of the code, fewer bugs, faster development, happier programmers and - at the end - more satisfied customers.
 
-It also means that tests are not something additional, optional. They are required and are a very important part of the system.
+It also means that tests are not something additional, optional. They are required and are very important part of the system.
 
 ===== Testability
 Writing tests might be a challenge, especially for old, legacy code where no tests were so far developed. Therefore when we start to develop a system, we pay a lot of attention from the very beginning to write testable code. Rules for writing testable code are described in many places, e.g. http://misko.hevery.com/attachments/Guide-Writing%20Testable%20Code.pdf[Guide to testable code by Misko Hevery], but details depend on project technologies, programming language paradigms, etc. As a general rule, we try to think about tests while writing production code or even to write tests before we implement a new feature. Strictly following that practice is called TDD and is described in chapter <<Test Driven Development>>. That would automatically ensure testability.
 
-Even in legacy code without tests, we try to write tests firstly before we make any changes. Thanks to that we can be sure that we didn't break anything accidentally.
+Even in legacy code without tests, we try to write tests firstly, before we make any changes. Thanks to that we can be sure that we didn't break anything while doing a bug fix or new feature development.
 
 ===== How we are doing unit testing?
-The approach we take for writing tests is to treat tests as executable specification. It simply means that tests describe desired functionality. Each test verifies one, single behavior of the system. Since tests focus on behavior they are not bound to implementation details. They verify public API of a "unit", ignoring private (hidden) methods and internal implementation structure. 
+The approach we take for writing tests is to treat tests as executable specification. It simply means that tests describe desired functionality. Each test verifies one, single behavior of the system. Since tests focus on behavior, they are not bound to implementation details. They verify public API of a "unit", ignoring private (hidden) methods and internal implementation structure. 
 
 Let's see an example. If we need to write a function that returns filtered and sorted list of items, in a test we try to verify desired behavior only by public API, ignoring the fact that filtering and sorting internally is implemented in separate functions. 
 
@@ -82,7 +82,7 @@ Let's see an example. If we need to write a function that returns filtered and s
 	}
 ----
 
-As we see, tests use only public method `findItems` to verify both filtering and sorting and are independent of implementation details, they ignore two private functions: `filter` and `sort`. What advantages it has? Well, firstly all functionalities are "covered" by the tests. Secondly we are not bound to implementation details and these details can evolve without breaking tests. For instance, in Java 8 you do filtering and sorting using new Stream API is a single chain of function calls:
+As we see, tests use only public method `findItems` to verify both filtering and sorting and are independent of implementation details, they ignore two private functions: `filter` and `sort`. What advantages does it have? Well, firstly, all functionalities are "covered" by the tests. Secondly, we are not bound to implementation details and these details can evolve without breaking tests. For instance, in Java 8 you do filtering and sorting using new Stream API is a single chain of function calls:
 
 [source, java]
 .Implementation in Java 8
@@ -96,7 +96,7 @@ As we see, tests use only public method `findItems` to verify both filtering and
 	}
 ----
 
-We made quite a big change, we removed 2 private methods but these are purely implementation details. No tests require re-implementation. We are free to refactor, to improve technical details, yet the tests remain clean and stable because they are focused on desired behavior. 
+We made quite a big change, we removed 2 private methods but these are purely implementation details. No tests require re-implementation. We are free to refactor, to improve technical details, yet the tests remain clean and stable because they are focused on *behavior*. 
 
 The tests that we presented show also basic structure of the test, which consists of 3 main steps: _Given, When, Then_, as on the example below:
 
@@ -118,17 +118,18 @@ The tests that we presented show also basic structure of the test, which consist
 
 Ideally, tests have only these 3 lines. Even if there is more to do in a test, it is always possible to refactor to these 3 lines.
 
-We also do, from time to time, other kinds of testing which also employ unit test tools (like JUnit). These could be for instance learning tests (that verify how external library works), low level detailed tests which drive design of implementation details. Nevertheless they are not obligatory, they might be deleted when no longer needed, so all rules mentioned above do not apply here. We also sometimes employ unit testing tools for integration tests which is described in a separate article <<Integration tests>>.
+We also do, from time to time, other kinds of testing which also employ unit test tools (like JUnit). These could be for instance learning tests (that verify how external library works), low level detailed tests which drive design of implementation details. Nevertheless they are not obligatory, they might be deleted when no longer needed, so not all rules mentioned above apply here. We also sometimes employ unit testing tools for integration tests which is described in a separate article <<Integration tests>>.
 
 ===== References
-List of online resources which go deeper into unit testing:
+
+Online resources:
 
 . http://martinfowler.com/bliki/UnitTest.html
 . http://blog.8thlight.com/uncle-bob/2013/09/23/Test-first.html
 . http://blog.8thlight.com/uncle-bob/2014/01/27/TheChickenOrTheRoad.html
 . http://blog.arkency.com/2014/09/unit-tests-vs-class-tests/
 
-List of books:
+Books:
 
 . http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882
 . http://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530
@@ -138,9 +139,10 @@ List of books:
 === Test Driven Development
 
 ===== Introduction
-TDD is a way of developing software in which you write tests first, before implementing a functionality. What kind of tests? It's about unit tests as defined in article <<Unit Tests>>. However, TDD additionally requires to apply a set of rules (details are below). Thanks to TDD you get source code that is fully testable, fully covered by tests, code that you can trust with your life. It means you know exactly what your code is doing (tests are executable spec), you won't be afraid to clean code, improve it, introduce any change. Sounds great, doesn't it? It is not trivial to write code in TDD manner though, but let's firstly see what exactly we mean by TDD.
+TDD is a way of developing software in which you write tests first, before implementing a functionality. What kind of tests? It's about unit tests as defined in article <<Unit Tests>>. However, TDD additionally requires to apply a set of rules (details are below). Thanks to TDD you get source code that is fully testable, fully covered by tests, code that you can trust with your life. It means you know exactly what your code is doing (tests are executable spec), you won't be afraid to clean code, improve it, introduce any change. Your team is able to go fast and consistently. Sounds great, doesn't it? +
+It is not trivial to write code in TDD manner though, but let's firstly see what exactly we mean by TDD.
 
-===== How to do it?
+===== How to do TDD?
 Apart from the general rule that you write tests before any production code, there are slight differences in details, of how you do TDD. We like Uncle's Bob approach most. He defines TDD as an activity performed in 4 cycles, see http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html[TheCyclesOfTDD].
 
 *Firstly*, you are not allowed to write a single line of production code without failing test. This is the lowest level rule expressed by so-called http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development[Three Laws of TDD]:
@@ -159,17 +161,22 @@ Please note that it means we don't have any separate phase in the project called
 
 *Fourthly*, while writing small test cases and small portions of code, it might be easy to loose the big picture. Therefore from time to time (say every couple of hours), we need to consider also if our code is in line with general architecture outline, e.g. if we don't call DB directly from a GUI component. Generally, our architectures tend to follow http://blog.8thlight.com/uncle-bob/2012/08/13/the-clean-architecture.html[Clean Architecture] principles and as such lead to universal solutions which are highly testable, provide separation of concerns, clearly define boundaries of the system and its internal components.
 
-In TDD tests are equally important as production code, therefore the same amount of care and attention should be paid to them. 
+In TDD tests are equally important as production code, therefore the same amount of care and attention is paid to them. 
 
-===== When to apply?
+===== When to use TDD?
+In BLStream we are not dogmatic about TDD. It is regarded as a good practice and if a team does not follow it, it must have good reason for it. Having said that, in our pratice it turned out that some areas of software development are very well suited for TDD (algorythmics, finding new solutions), for others it is not very pragmatic (legacy systems, standardized issues - where the implementation is already known) and sometimes even not really possible (front-end stuff like CSS). Nevertheless we *always* write our code having testability in mind and advise to consider TDD in projects.
 
 ===== References
 
+Online resources:
 . http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
 . http://blog.8thlight.com/uncle-bob/2013/09/23/Test-first.html
-. 
-. http://blog.8thlight.com/uncle-bob/2014/04/30/When-tdd-does-not-work.html
+. http://martinfowler.com/bliki/TestDrivenDevelopment.html
+. http://www.jamesshore.com/Agile-Book/test_driven_development.html
 
+Books:
+. http://www.amazon.com/gp/product/0321146530
+. http://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627
 
 
 === Integration tests
