@@ -153,7 +153,7 @@ IMPORTANT: 1. You must write a failing test before you write any production code
 
 *Secondly*, since _Getting software to work is only half of the job_ (Kent Beck), we need to clean (via refactoring) the code. Therefore once you completed a unit test (or a set of small tests), you need to have a look at code you developed from a little distance and think what to improve having long term maintainability in mind. This way of looking at development cycle is called _Red-Green-Refactor_. 
 
-image::red_green_refactor.jpg[red-green-refactor]
+image::red_green_refactor.jpg[align="center", title="Red-Green-Refactor cycle"]
 
 Please note that it means we don't have any separate phase in the project called _refactoring_ or _code clean up_. Refactorings and care about code quality are continuous, inherent in development process. 
 
