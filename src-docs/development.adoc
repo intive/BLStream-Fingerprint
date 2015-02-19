@@ -164,7 +164,7 @@ Please note that it means we don't have any separate phase in the project called
 In TDD tests are equally important as production code, therefore the same amount of care and attention is paid to them. 
 
 ===== When to use TDD?
-In BLStream we are not dogmatic about TDD. It is regarded as a good practice and if a team does not follow it, it must have good reason for it. Having said that, in our pratice it turned out that some areas of software development are very well suited for TDD (algorythmics, finding new solutions), for others it is not very pragmatic (legacy systems, standardized issues - where the implementation is already known) and sometimes even not really possible (front-end stuff like CSS). Nevertheless we *always* write our code having testability in mind and advise to consider TDD in projects.
+In BLStream we are not dogmatic about TDD. It is regarded as a good practice and if a team does not follow it, it must have good reason for it. Having said that, our experience is that some areas of software development are very well suited for TDD (algorithmics, finding new solutions), for others it is not very pragmatic (legacy systems, standardized issues - where the implementation is already known) and sometimes even not really possible (front-end stuff like CSS). Nevertheless we *always* write our code having testability in mind and advise to consider TDD in projects.
 
 ===== References
 
