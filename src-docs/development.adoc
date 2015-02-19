@@ -180,6 +180,33 @@ Books:
 . http://www.amazon.com/gp/product/0321146530
 . http://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627
 
+[author="Andrzej Bednarz", ver="0.1-DRAFT"]
+=== Pair Programming
+
+Agile software development requires, among other things, frequent feedback loops on many levels, similar to the following outline:
+
+image::xp.png[align="center", title="eXtreme Programming cycles", source="http://en.wikipedia.org/wiki/Extreme_programming"]
+
+As we see from this picture, pair programming is the lowest level feedback loop. It provides instant feedback from a developer to a developer while working on code. Sitting in pairs while programming has proved to lead to higher quality code and to better knowledge sharing (see http://en.wikipedia.org/wiki/Pair_programming[Pair Programming in Wikipedia]). In BLStream we do pair programming and we found that technique very useful, especially under following circumstances:
+
+* Development of an unclear requirement
+* Two people who have different set of skills required together to solve an issues
+* Two people who need to share knowledge
+* New person in a team
+* New technologies and/or unknown tools
+
+At the same time we found that technique inefficient for standard and well understood tasks, when it was obvious what needs to be done or when two people were equal in skills and experience. Also remote work - which is becoming more and more popular these days - makes working in pairs much harder. Therefore we usually do pair programming for short periods of time, when it makes most sense. For the rest of time, we perform code reviews, which are described in a separate article <<Code Reviews>>.
+
+[author="Andrzej Bednarz", ver="0.1-DRAFT"]
+=== Code Reviews
+In BLStream it is obligatory to do either <<Pair Programming>> or code reviews. Both techniques lead to higher quality, fewer bugs, sharing of knowledge and good practices among team members. Therefore, even though they require some investment of time, they lead in fact to higher productivity and lower total cost of the project, see http://en.wikipedia.org/wiki/Code_review[Wikipedia] for references to empirical studies. 
+
+Some time ago the dominating type of code reviews was "over the shoulder". It meant that reviewer had to come to developer's machine as the developer walked through the code. Nowadays the standard way to do code reviews is to use some sort of assist tools. Firstly, code developed is usually using https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow[Git feature branches], which makes very easy for the reviewer to get the changed source code and check it in an isolated environment. Secondly, many tools emerged which mimic https://help.github.com/articles/using-pull-requests/[GitHub pull requests]. These tools, e.g. https://www.atlassian.com/software/stash [Atlassian Stash], make use of Git feature branches and provide convenient web interface for both defining and reviewing pull requests. With these tools you can not only see changes to review in a commit-by-commit view, but also you can share comments, ask developer additional questions or even fire a build on CI environment (e.g. Jenkins) which performs further analysis (tests, static code checks). They also allow to define mini-workflows, e.g. two positive reviews are required before the change can be merged to the main branch. The following picture shows a basic screen for Atlassian Stash.
+
+image::Stash-screenshot.png[align="center", title="Stash screenshot", source="https://www.atlassian.com/company/press/press-releases/atlassian-ships-major-updates-to-distributed-version-control-products-readies-enterprise-for-massive-git-adoption/pageSections/0/pageSections/00/contentFullWidth/0/content_files/file0/Stash-screenshot.png"]
+
+Of course tools do not make code review good, they just facilitate it. Teams need to define what exactly need to be checked on code reviews, especially which standards, conventions must be followed (code styles, architecture, GUI guidelines, performance impact, etc.). More on this in the subsequent chapters. +
+`TODO:Maybe put some references here?`
 
 === Integration tests
 
@@ -240,10 +267,6 @@ from nothing to running in <1h
 === Truly RESTful interfaces
 
 === HTML validation
-
-=== Code Reviews
-
-=== Pair Programming
 
 === Database schema versioning
 
