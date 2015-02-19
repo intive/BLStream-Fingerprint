@@ -139,7 +139,7 @@ Books:
 === Test Driven Development
 
 ===== Introduction
-TDD is a way of developing software in which you write tests first, before implementing a functionality. What kind of tests? It's about unit tests as defined in article <<Unit Tests>>. However, TDD additionally requires to apply a set of rules (details are below). Thanks to TDD you get source code that is fully testable, fully covered by tests, code that you can trust with your life. It means you know exactly what your code is doing (tests are executable spec), you won't be afraid to clean code, improve it, introduce any change. Your team is able to go fast and consistently. Sounds great, doesn't it? +
+TDD is a way of developing software in which you write tests first, before implementing a functionality. What kind of tests? It's about unit tests as defined in article <<Unit Tests>>. However, TDD additionally requires to apply a set of rules (details are below). Thanks to TDD you get source code that is fully testable, fully covered by tests, code that you can trust with your life. It means you know exactly what your code is doing (tests are executable spec), you won't be afraid to clean code, improve it, introduce any change. Your team is able to consistently go fast. Sounds great, doesn't it? +
 It is not trivial to write code in TDD manner though, but let's firstly see what exactly we mean by TDD.
 
 ===== How to do TDD?
