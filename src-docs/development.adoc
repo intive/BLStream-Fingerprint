@@ -169,12 +169,14 @@ In BLStream we are not dogmatic about TDD. It is regarded as a good practice and
 ===== References
 
 Online resources:
+
 . http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
 . http://blog.8thlight.com/uncle-bob/2013/09/23/Test-first.html
 . http://martinfowler.com/bliki/TestDrivenDevelopment.html
 . http://www.jamesshore.com/Agile-Book/test_driven_development.html
 
 Books:
+
 . http://www.amazon.com/gp/product/0321146530
 . http://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627
 
