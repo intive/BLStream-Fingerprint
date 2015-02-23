@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>BLStream Fingerprint</title>
+<date>2015-02-23</date>
+</info>
+<chapter xml:id="preface">
+<title>Preface</title>
+<simpara>BLStream Finger print is a set of practices applied in the company.</simpara>
+<simpara><?asciidoc-pagebreak?></simpara>
+</chapter>
+<chapter xml:id="project-management">
+<title>Project management</title>
+<section xml:id="definition-of-done">
+<title>Definition of Done</title>
+
+</section>
+<section xml:id="daily-standup">
+<title>Daily Standup</title>
+
+</section>
+<section xml:id="demo">
+<title>Demo</title>
+
+</section>
+<section xml:id="scrum-kanban-board">
+<title>Scrum/Kanban Board</title>
+
+</section>
+<section xml:id="planning-meeting">
+<title>Planning Meeting</title>
+
+</section>
+<section xml:id="retrospectives">
+<title>Retrospectives</title>
+
+</section>
+<section xml:id="retrospectives-shared-with-the-customer">
+<title>Retrospectives shared with the customer</title>
+
+</section>
+<section xml:id="project-practices-charter-shared-with-the-customer">
+<title>Project Practices Charter shared with the customer</title>
+
+</section>
+<section xml:id="collocated-team-all-team-members-pm-included">
+<title>Collocated Team (all team members PM included)</title>
+
+</section>
+<section xml:id="3rd-party-libraries-licences-listed-approved">
+<title>3rd party libraries licences listed, approved</title>
+
+</section>
+<section xml:id="clean-backlog">
+<title>Clean Backlog</title>
+
+</section>
+<section xml:id="responsive-product-owner">
+<title>Responsive Product Owner</title>
+
+</section>
+<section xml:id="grooming">
+<title>Grooming</title>
+
+</section>
+<section xml:id="burnup-burndown-chart">
+<title>BurnUp / BurnDown chart</title>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</chapter>
+<chapter xml:id="development">
+<title>Development</title>
+<section xml:id="unit-tests">
+<title>Unit Tests</title>
+<section xml:id="introduction">
+<title>Introduction</title>
+<simpara>Unit testing is at the core of engineering practices in BLStream. It&#8217;s not just a practice, it is a foundation on which many other, more sophisticated practices are built. Without unit tests it would be impossible to apply techniques like <xref linkend="continuous-delivery"/> or <xref linkend="test-driven-development"/> and it would make <link xlink:href="http://en.wikipedia.org/wiki/Code_refactoring">code refactorings</link> and generally code maintenance much harder and error prone.</simpara>
+</section>
+<section xml:id="what-do-we-understand-by-unit-tests">
+<title>What do we understand by unit tests?</title>
+<simpara>There are many definitions of "unit test" in the industry, see e.g. <link xlink:href="http://martinfowler.com/bliki/UnitTest.html">Martin Fowler - UnitTest</link>, which makes the term rather confusing. What we understand by unit test is simply:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>they are written by programmers themselves</simpara>
+</listitem>
+<listitem>
+<simpara>they run fast, in seconds rather than minutes</simpara>
+</listitem>
+<listitem>
+<simpara>they are fine-grained, each test verifies single "thing" (in other words - there is one reason to fail).</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Implementation details of how we write unit tests vary, depending on the tools and technologies the project is using. Nevertheless, common goal is to end up with a system that has complete suite of tests which "cover" all functionalities of the system. Thanks to that we are able to clean the code and to improve it anytime, not worrying that we accidentally break something. After each change we can run our tests and make sure that all works as expected. That&#8217;s really powerful. It leads to higher quality of the code, fewer bugs, faster development, happier programmers and - at the end - more satisfied customers.</simpara>
+<simpara>It also means that tests are not something additional, optional. They are required and are very important part of the system.</simpara>
+</section>
+<section xml:id="testability">
+<title>Testability</title>
+<simpara>Writing tests might be a challenge, especially for old, legacy code where no tests were so far developed. Therefore when we start to develop a system, we pay a lot of attention from the very beginning to write testable code. Rules for writing testable code are described in many places, e.g. <link xlink:href="http://misko.hevery.com/attachments/Guide-Writing%20Testable%20Code.pdf">Guide to testable code by Misko Hevery</link>, but details depend on project technologies, programming language paradigms, etc. As a general rule, we try to think about tests while writing production code or even to write tests before we implement a new feature. Strictly following that practice is called TDD and is described in chapter <xref linkend="test-driven-development"/>. That would automatically ensure testability.</simpara>
+<simpara>Even in legacy code without tests, we try to write tests firstly, before we make any changes. Thanks to that we can be sure that we didn&#8217;t break anything while doing a bug fix or new feature development.</simpara>
+</section>
+<section xml:id="how-we-are-doing-unit-testing">
+<title>How we are doing unit testing?</title>
+<simpara>The approach we take for writing tests is to treat tests as executable specification. It simply means that tests describe desired functionality. Each test verifies one, single behavior of the system. Since tests focus on behavior, they are not bound to implementation details. They verify public API of a "unit", ignoring private (hidden) methods and internal implementation structure.</simpara>
+<simpara>Let&#8217;s see an example. If we need to write a function that returns filtered and sorted list of items, in a test we try to verify desired behavior only by public API, ignoring the fact that filtering and sorting internally is implemented in separate functions.</simpara>
+<formalpara>
+<title>Unit tests</title>
+<para>
+<programlisting language="java" linenumbering="unnumbered">	@Test
+	public void shouldFilterActiveOnly() {
+		MyRepo repo = new MyRepo();
+
+		List&lt;Item&gt; items = repo.findItems();
+
+		assertThat(items).are(activeOnly());
+	}
+
+	@Test
+	public void shouldSortList() {
+		MyRepo repo = new MyRepo();
+
+		List&lt;Item&gt; items = repo.findItems();
+
+		assertThat(items).isSorted();
+	}</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>Example of implementation</title>
+<para>
+<programlisting language="java" linenumbering="unnumbered">	public class MyRepo {
+
+		public List&lt;Item&gt; findItems() {
+			List&lt;Item&gt; items = newArrayList(new Item(), new Item());
+			List&lt;Item&gt; filteredItems = filter(items);
+			return sort(filteredItems);
+		}
+
+		private List&lt;Item&gt; sort(List&lt;Item&gt; items) {
+			List&lt;Item&gt; itemsSorted = newArrayList(items);
+			itemsSorted.sort(null);
+			return itemsSorted;
+		}
+
+		private List&lt;Item&gt; filter(List&lt;Item&gt; items) {
+
+			List&lt;Item&gt; filtered = new ArrayList&lt;&gt;();
+
+			for (Item item : items) {
+				if (item.isActive()) {
+					filtered.add(item);
+				}
+			}
+			return filtered;
+		}
+	}</programlisting>
+</para>
+</formalpara>
+<simpara>As we see, tests use only public method <literal>findItems</literal> to verify both filtering and sorting and are independent of implementation details, they ignore two private functions: <literal>filter</literal> and <literal>sort</literal>. What advantages does it have? Well, firstly, all functionalities are "covered" by the tests. Secondly, we are not bound to implementation details and these details can evolve without breaking tests. For instance, in Java 8 you do filtering and sorting using new Stream API is a single chain of function calls:</simpara>
+<formalpara>
+<title>Implementation in Java 8</title>
+<para>
+<programlisting language="java" linenumbering="unnumbered">	public List&lt;Item&gt; findItems() {
+		List&lt;Item&gt; items = newArrayList(new Item(), new Item());
+		return items.stream()
+			.filter(Item::isActive)
+			.sorted()
+			.collect(Collectors.toList());
+	}</programlisting>
+</para>
+</formalpara>
+<simpara>We made quite a big change, we removed 2 private methods but these are purely implementation details. No tests require re-implementation. We are free to refactor, to improve technical details, yet the tests remain clean and stable because they are focused on <emphasis role="strong">behavior</emphasis>.</simpara>
+<simpara>The tests that we presented show also basic structure of the test, which consists of 3 main steps: <emphasis>Given, When, Then</emphasis>, as on the example below:</simpara>
+<formalpara>
+<title>Structure of a test</title>
+<para>
+<programlisting language="java" linenumbering="unnumbered">	@Test
+	public void shouldSortList() {
+		MyRepo repo = new MyRepo(); <co xml:id="CO1-1"/>
+
+		List&lt;Item&gt; items = repo.findItems(); <co xml:id="CO1-2"/>
+
+		assertThat(items).isSorted(); <co xml:id="CO1-3"/>
+	}</programlisting>
+</para>
+</formalpara>
+<calloutlist>
+<callout arearefs="CO1-1">
+<para>Section <emphasis>Given</emphasis> - should set up all required objects, pre-conditions to the test</para>
+</callout>
+<callout arearefs="CO1-2">
+<para>Section <emphasis>When</emphasis> - behavior, action you are testing</para>
+</callout>
+<callout arearefs="CO1-3">
+<para>Section <emphasis>Then</emphasis> - verifies expected state</para>
+</callout>
+</calloutlist>
+<simpara>Ideally, tests have only these 3 lines. Even if there is more to do in a test, it is always possible to refactor to these 3 lines.</simpara>
+<simpara>We also do, from time to time, other kinds of testing which also employ unit test tools (like JUnit). These could be for instance learning tests (that verify how external library works), low level detailed tests which drive design of implementation details. Nevertheless they are not obligatory, they might be deleted when no longer needed, so not all rules mentioned above apply here. We also sometimes employ unit testing tools for integration tests which is described in a separate article <xref linkend="integration-tests"/>.</simpara>
+</section>
+<section xml:id="references">
+<title>References</title>
+<simpara>Online resources:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara><link xlink:href="http://martinfowler.com/bliki/UnitTest.html">http://martinfowler.com/bliki/UnitTest.html</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://blog.8thlight.com/uncle-bob/2013/09/23/Test-first.html">http://blog.8thlight.com/uncle-bob/2013/09/23/Test-first.html</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://blog.8thlight.com/uncle-bob/2014/01/27/TheChickenOrTheRoad.html">http://blog.8thlight.com/uncle-bob/2014/01/27/TheChickenOrTheRoad.html</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://blog.arkency.com/2014/09/unit-tests-vs-class-tests/">http://blog.arkency.com/2014/09/unit-tests-vs-class-tests/</link></simpara>
+</listitem>
+</orderedlist>
+<simpara>Books:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara><link xlink:href="http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530">http://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://www.amazon.com/xUnit-Test-Patterns-Refactoring-Code/dp/0131495054">http://www.amazon.com/xUnit-Test-Patterns-Refactoring-Code/dp/0131495054</link></simpara>
+</listitem>
+</orderedlist>
+</section>
+</section>
+<section xml:id="test-driven-development">
+<title>Test Driven Development</title>
+<section xml:id="introduction-2">
+<title>Introduction</title>
+<simpara>TDD is a way of developing software in which you write tests first, before implementing a functionality. What kind of tests? It&#8217;s about unit tests as defined in article <xref linkend="unit-tests"/>. However, TDD additionally requires to apply a set of rules (details are below). Thanks to TDD you get source code that is fully testable, fully covered by tests, code that you can trust with your life. It means you know exactly what your code is doing (tests are executable spec), you won&#8217;t be afraid to clean code, improve it, introduce any change. Your team is able to consistently go fast. Sounds great, doesn&#8217;t it?<?asciidoc-br?>
+It is not trivial to write code in TDD manner though, but let&#8217;s firstly see what exactly we mean by TDD.</simpara>
+</section>
+<section xml:id="how-to-do-tdd">
+<title>How to do TDD?</title>
+<simpara>Apart from the general rule that you write tests before any production code, there are slight differences in details, of how you do TDD. We like Uncle&#8217;s Bob approach most. He defines TDD as an activity performed in 4 cycles, see <link xlink:href="http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html">TheCyclesOfTDD</link>.</simpara>
+<simpara><emphasis role="strong">Firstly</emphasis>, you are not allowed to write a single line of production code without failing test. This is the lowest level rule expressed by so-called <link xlink:href="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">Three Laws of TDD</link>:</simpara>
+<important>
+<simpara>1. You must write a failing test before you write any production code.<?asciidoc-br?>
+2. You must not write more of a test than is sufficient to fail, or fail to compile.<?asciidoc-br?>
+3. You must not write more production code than is sufficient to make the currently failing test pass.</simpara>
+</important>
+<simpara><emphasis role="strong">Secondly</emphasis>, since <emphasis>Getting software to work is only half of the job</emphasis> (Kent Beck), we need to clean (via refactoring) the code. Therefore once you completed a unit test (or a set of small tests), you need to have a look at code you developed from a little distance and think what to improve having long term maintainability in mind. This way of looking at development cycle is called <emphasis>Red-Green-Refactor</emphasis>.</simpara>
+<figure>
+<title>Red-Green-Refactor cycle</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/red_green_refactor.jpg" align="center"/>
+</imageobject>
+<textobject><phrase>red green refactor</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Please note that it means we don&#8217;t have any separate phase in the project called <emphasis>refactoring</emphasis> or <emphasis>code clean up</emphasis>. Refactorings and care about code quality are continuous, inherent in development process.</simpara>
+<simpara><emphasis role="strong">Thirdly</emphasis>, even applying previous rules, it&#8217;s easy to fall into troubles. You may come up with a test that forces you to write tons of production code or even to throw away your whole current implementation. Instead, you should work in an incremental, step-by-step manner. How we can achieve that? By making our implementation code more and more generic with every subsequent test. Our code should not only fulfill requirements imposed by tests, it should naturally flow into direction of generic solution for all possible tests. Also tests themselves could break this natural process. If a test requires <emphasis>revolution</emphasis> in code maybe it&#8217;s worth considering a smaller step. This cycle is called <link xlink:href="http://thecleancoder.blogspot.com/2010/11/craftsman-63-specifics-and-generics.html">Specific/Generic cycle</link> and should be considered every couple of tests. It definitely requires some practice and skills to get it right.</simpara>
+<simpara><emphasis role="strong">Fourthly</emphasis>, while writing small test cases and small portions of code, it might be easy to loose the big picture. Therefore from time to time (say every couple of hours), we need to consider also if our code is in line with general architecture outline, e.g. if we don&#8217;t call DB directly from a GUI component. Generally, our architectures tend to follow <link xlink:href="http://blog.8thlight.com/uncle-bob/2012/08/13/the-clean-architecture.html">Clean Architecture</link> principles and as such lead to universal solutions which are highly testable, provide separation of concerns, clearly define boundaries of the system and its internal components.</simpara>
+<simpara>In TDD tests are equally important as production code, therefore the same amount of care and attention is paid to them.</simpara>
+</section>
+<section xml:id="when-to-use-tdd">
+<title>When to use TDD?</title>
+<simpara>In BLStream we are not dogmatic about TDD. It is regarded as a good practice and if a team does not follow it, it must have good reason for it. Having said that, our experience is that some areas of software development are very well suited for TDD (algorithmics, finding new solutions), for others it is not very pragmatic (legacy systems, standardized issues - where the implementation is already known) and sometimes even not really possible (front-end stuff like CSS). Nevertheless we <emphasis role="strong">always</emphasis> write our code having testability in mind and advise to consider TDD in projects.</simpara>
+</section>
+<section xml:id="references-2">
+<title>References</title>
+<simpara>Online resources:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara><link xlink:href="http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html">http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://blog.8thlight.com/uncle-bob/2013/09/23/Test-first.html">http://blog.8thlight.com/uncle-bob/2013/09/23/Test-first.html</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://martinfowler.com/bliki/TestDrivenDevelopment.html">http://martinfowler.com/bliki/TestDrivenDevelopment.html</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://www.jamesshore.com/Agile-Book/test_driven_development.html">http://www.jamesshore.com/Agile-Book/test_driven_development.html</link></simpara>
+</listitem>
+</orderedlist>
+<simpara>Books:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara><link xlink:href="http://www.amazon.com/gp/product/0321146530">http://www.amazon.com/gp/product/0321146530</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627">http://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627</link></simpara>
+</listitem>
+</orderedlist>
+</section>
+</section>
+<section xml:id="pair-programming">
+<title>Pair Programming</title>
+<simpara>Agile software development requires, among other things, frequent feedback on all possible levels. There is no better way to get early feedback during software development than pair programming, see figure below.</simpara>
+<figure>
+<title>Feedback loops in Agile on XP example</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/xp.png" align="center"/>
+</imageobject>
+<textobject><phrase>xp</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>As we see from this picture, pair programming is the lowest level feedback loop. It provides instant feedback from a developer to a developer while working on code. Sitting in pairs while programming has proved to lead to higher quality code, better knowledge sharing and mutual encouragement (see <link xlink:href="http://en.wikipedia.org/wiki/Pair_programming">Pair Programming in Wikipedia</link>). In BLStream we do pair programming and we found that technique very useful, especially under following circumstances:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Development of an unclear/challening requirement</simpara>
+</listitem>
+<listitem>
+<simpara>Two people with different set of skills</simpara>
+</listitem>
+<listitem>
+<simpara>New person in a team</simpara>
+</listitem>
+<listitem>
+<simpara>New technologies and/or unknown tools</simpara>
+</listitem>
+</itemizedlist>
+<simpara>At the same time we found that technique might be inefficient for standard and well understood tasks, when it was obvious what needs to be done or when two people were equal in skills and experience. Also remote work - which is becoming more and more popular these days - makes working in pairs a little harder. Therefore we usually do pair programming for short periods of time, when it makes most sense. Rest of the time we find <xref linkend="code-reviews"/> sufficient.</simpara>
+</section>
+<section xml:id="code-reviews">
+<title>Code Reviews</title>
+<simpara>In BLStream it is obligatory to do either <xref linkend="pair-programming"/> or code reviews. Both techniques lead to higher quality, fewer bugs, sharing of knowledge and good practices among team members. Therefore, even though they require some investment of time, they lead in fact to higher productivity and lower total cost of the project, see <link xlink:href="http://en.wikipedia.org/wiki/Code_review">Wikipedia</link> for references to empirical studies.</simpara>
+<simpara>Some time ago the dominating type of code reviews was "over the shoulder". It meant that reviewer had to come to developer&#8217;s machine as the developer walked through the code. Nowadays the standard way to do code reviews is to use <link xlink:href="http://git-scm.com">Git SCM</link> together with some sort of assist tools. Firstly, code developed is usually using <link xlink:href="https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow">Git feature branches</link>, which makes very easy for the reviewer to get the changed source code and check it in an isolated environment. Secondly, many tools emerged which mimic <link xlink:href="https://help.github.com/articles/using-pull-requests/">GitHub pull requests</link>. These tools, e.g. <link xlink:href="https://www.atlassian.com/software/stash">Atlassian Stash</link>, make use of Git feature branches and provide convenient web interface for both defining and reviewing pull requests. With these tools you can not only see changes to review in a commit-by-commit view, but also you can share comments, ask developer additional questions or even fire a build on CI environment (e.g. Jenkins) with tests, static code analysis, etc. They also allow to define mini-workflows, e.g. "two positive reviews are required before the change can be merged to the main branch". The following picture shows a basic screen for Atlassian Stash.</simpara>
+<figure>
+<title>Stash screenshot</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/Stash-screenshot.png" align="center"/>
+</imageobject>
+<textobject><phrase>Stash screenshot</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Of course tools do not make code review good, they just facilitate it. Teams need to define what exactly need to be checked on code reviews, especially which standards, conventions must be followed (code styles, architecture, GUI guidelines, performance impact, etc.). More on this in subsequent chapters.</simpara>
+</section>
+<section xml:id="integration-tests">
+<title>Integration tests</title>
+<simpara>Integration tests are important practice.</simpara>
+</section>
+<section xml:id="easy-infrastructure-setup">
+<title>Easy infrastructure setup</title>
+<simpara>from nothing to running in &lt;1h</simpara>
+</section>
+<section xml:id="easy-application-setup">
+<title>Easy application setup</title>
+<simpara>from nothing to running in &lt;1h</simpara>
+</section>
+<section xml:id="concurrency-in-application-code-accounted-for">
+<title>Concurrency in application code accounted for</title>
+
+</section>
+<section xml:id="gui-style-guide-defined">
+<title>GUI Style Guide defined</title>
+
+</section>
+<section xml:id="application-monitoring">
+<title>Application Monitoring</title>
+
+</section>
+<section xml:id="scalability-requirements-known-and-accounted-for">
+<title>Scalability requirements known and accounted for</title>
+
+</section>
+<section xml:id="performance-requirements-known-and-accounted-for">
+<title>Performance requirements known and accounted for</title>
+
+</section>
+<section xml:id="static-code-analysis-backend">
+<title>Static code analysis (backend)</title>
+
+</section>
+<section xml:id="application-events-logging">
+<title>Application events logging</title>
+
+</section>
+<section xml:id="owasp-top-10-in-definition-of-done">
+<title>OWASP Top 10 in Definition of Done</title>
+
+</section>
+<section xml:id="authorization-model-defined">
+<title>Authorization model defined</title>
+
+</section>
+<section xml:id="continuous-integration">
+<title>Continuous Integration</title>
+
+</section>
+<section xml:id="continuous-delivery">
+<title>Continuous Delivery</title>
+
+</section>
+<section xml:id="continuous-deployment">
+<title>Continuous Deployment</title>
+
+</section>
+<section xml:id="documentation-tracked-in-vcs">
+<title>Documentation tracked in VCS</title>
+
+</section>
+<section xml:id="documentation-generated-during-ci">
+<title>Documentation generated during CI</title>
+
+</section>
+<section xml:id="parts-of-the-documentation-generated-automatically">
+<title>Parts of the documentation generated automatically</title>
+
+</section>
+<section xml:id="automatic-documentation-of-the-executed-tests">
+<title>Automatic documentation of the executed tests</title>
+
+</section>
+<section xml:id="documentation-scope-agreed">
+<title>Documentation scope agreed</title>
+
+</section>
+<section xml:id="js-application-framework">
+<title>JS application framework</title>
+
+</section>
+<section xml:id="js-build-process">
+<title>JS Build process</title>
+
+</section>
+<section xml:id="js-modules-dependency-management">
+<title>JS modules dependency management</title>
+
+</section>
+<section xml:id="js-unit-test">
+<title>JS Unit test</title>
+
+</section>
+<section xml:id="css-builder">
+<title>CSS builder</title>
+
+</section>
+<section xml:id="static-code-analysis-javascript">
+<title>Static code analysis (JavaScript)</title>
+
+</section>
+<section xml:id="truly-restful-interfaces">
+<title>Truly RESTful interfaces</title>
+
+</section>
+<section xml:id="html-validation">
+<title>HTML validation</title>
+
+</section>
+<section xml:id="database-schema-versioning">
+<title>Database schema versioning</title>
+
+</section>
+<section xml:id="database-data-versioning">
+<title>Database data versioning</title>
+
+</section>
+<section xml:id="concurrency-for-db-writes">
+<title>Concurrency for DB writes</title>
+
+</section>
+<section xml:id="version-control-system">
+<title>Version Control System</title>
+
+</section>
+<section xml:id="branching-strategy">
+<title>Branching strategy</title>
+<simpara><?asciidoc-pagebreak?></simpara>
+</section>
+</chapter>
+<chapter xml:id="quality-assurance">
+<title>Quality assurance</title>
+<section xml:id="radiator">
+<title>Radiator</title>
+
+</section>
+<section xml:id="defect-tracking-system">
+<title>Defect Tracking System</title>
+
+</section>
+<section xml:id="defined-bug-lifecycle">
+<title>Defined bug lifecycle</title>
+
+</section>
+<section xml:id="at-least-1-qa-for-every-4-developers">
+<title>At least 1 QA for every 4 developers</title>
+
+</section>
+<section xml:id="bug-report-template">
+<title>Bug report template</title>
+
+</section>
+<section xml:id="bug-triage-meeting">
+<title>Bug triage meeting</title>
+
+</section>
+<section xml:id="smoke">
+<title>Smoke</title>
+
+</section>
+<section xml:id="integration">
+<title>Integration</title>
+
+</section>
+<section xml:id="functional-acceptance">
+<title>Functional / Acceptance</title>
+
+</section>
+<section xml:id="spelling">
+<title>Spelling</title>
+
+</section>
+<section xml:id="security">
+<title>Security</title>
+
+</section>
+<section xml:id="performance">
+<title>Performance</title>
+
+</section>
+<section xml:id="exploratory">
+<title>Exploratory</title>
+
+</section>
+<section xml:id="usability">
+<title>Usability</title>
+
+</section>
+<section xml:id="versioned-repository-of-the-test-scenarios">
+<title>Versioned repository of the test scenarios</title>
+
+</section>
+<section xml:id="pair-testing">
+<title>Pair testing</title>
+
+</section>
+</chapter>
+</book>
