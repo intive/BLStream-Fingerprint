@@ -181,6 +181,11 @@ Books:
 . http://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627
 
 
+=== Code Reviews
+
+=== Pair Programming
+
+
 === Integration tests
 
 === Easy infrastructure setup 
@@ -240,10 +245,6 @@ from nothing to running in <1h
 === Truly RESTful interfaces
 
 === HTML validation
-
-=== Code Reviews
-
-=== Pair Programming
 
 === Database schema versioning
 
