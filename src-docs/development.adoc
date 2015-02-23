@@ -209,7 +209,7 @@ Of course tools do not make code review good, they just facilitate it. Teams nee
 
 === Integration tests
 
-Integration tests are very important practice. 
+Integration tests are important practice. 
 
 === Easy infrastructure setup 
 
