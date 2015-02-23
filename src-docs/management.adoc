@@ -2,7 +2,7 @@
 
 === Definition of Done
 
-This is very important practice.
+This is important practice.
 
 === Daily Standup
 === Demo
