@@ -2,7 +2,7 @@
 
 === Definition of Done
 
-Defition of done is important.
+Defition of done is very important.
 
 === Daily Standup
 === Demo
