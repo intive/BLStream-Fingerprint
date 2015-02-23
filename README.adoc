@@ -3,28 +3,10 @@ Latest version of generated docs: https://github.com/blstream/BLStream-Fingerpri
 
 = BLStream-Fingerprint
 
-== Why the hell we decided to use AsciiDoc
+== Introduction
 
-.We wanted:
-* to make writing as simple as possible, as simple as writing an email (unlike LaTeX or DocBook);
-* at the same time powerful enough to be able to publish content as HTML, PDF, ePub or even as a regular, printed paper book 
-(unlike Markdown);
-* a cross-platform tool that primarily focuses on content, formatting can be applied later (unlike MS Word);
-* to have text easy versionable, publicly available, easily editable even directly on web page using only a browser (GitHub);
-* a standard tool, popular in industry, used by professional publishers, e.g. http://chimera.labs.oreilly.com/about[O'Reilly], https://github.com/aantonop/bitcoinbook[example of professional book].
-
-== Basic how-to
-
-Insightful introduction into AsciiDoc: http://asciidoctor.org/docs/asciidoc-writers-guide[AsciiDoctor writers guide].
-Read it to learn:
-
-* Which editor to use
-* The basic structure of an AsciiDoc document
-* How to add other structural elements such as lists, block quotes and source code
-
-Other useful references: http://asciidoctor.org/docs/asciidoc-syntax-quick-reference[AsciiDoc quick reference], full http://asciidoctor.org/docs/user-manual[user manual]
-
-For writing we recommend to use just your favourite text editor (Notepad++, Textmate, GEdit, Atom) + https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia?hl=en[browser plugin] for live preview.
+BLStream Fingerprint is a project aimed at describing the core practices we use at BLStream while developing software for our customers. 
+We want this project to be open, easily accessible, fully transparent, therefore we use GitHub for collaborative work and AsciiDoc as publishing format.
 
 == Fingerprint conventions
 
@@ -47,6 +29,29 @@ Inspired by http://chimera.labs.oreilly.com/books/1230000000065/ch04.html[O'Reil
 Unit testing is at the core of engineering practices in BLStream...
 
 ----
+
+== Basic how-to
+
+Insightful introduction into AsciiDoc: http://asciidoctor.org/docs/asciidoc-writers-guide[AsciiDoctor writers guide].
+Read it to learn:
+
+* Which editor to use
+* The basic structure of an AsciiDoc document
+* How to add other structural elements such as lists, block quotes and source code
+
+Other useful references: http://asciidoctor.org/docs/asciidoc-syntax-quick-reference[AsciiDoc quick reference], full http://asciidoctor.org/docs/user-manual[user manual]
+
+For writing we recommend to use just your favourite text editor (Notepad++, Textmate, GEdit, Atom) + https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia?hl=en[browser plugin] for live preview.
+
+== Why the hell we decided to use AsciiDoc
+
+.We wanted:
+* to make writing as simple as possible, as simple as writing an email (unlike LaTeX or DocBook);
+* at the same time powerful enough to be able to publish content as HTML, PDF, ePub or even as a regular, printed paper book 
+(unlike Markdown);
+* a cross-platform tool that primarily focuses on content, formatting can be applied later (unlike MS Word);
+* to have text easy versionable, publicly available, easily editable even directly on web page using only a browser (GitHub);
+* a standard tool, popular in industry, used by professional publishers, e.g. http://chimera.labs.oreilly.com/about[O'Reilly], https://github.com/aantonop/bitcoinbook[example of professional book].
 
 == Technical details for nerds
 
