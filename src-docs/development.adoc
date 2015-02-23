@@ -215,6 +215,8 @@ Of course tools do not make code review good, they just facilitate it. Teams nee
 
 === Integration tests
 
+Integration tests are important practice. 
+
 === Easy infrastructure setup 
 
 from nothing to running in <1h
