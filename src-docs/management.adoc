@@ -1,9 +1,6 @@
 == Project management
 
 === Definition of Done
-
-This is important practice.
-
 === Daily Standup
 === Demo
 === Scrum/Kanban Board
