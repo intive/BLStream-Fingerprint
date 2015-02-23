@@ -188,7 +188,7 @@ Agile software development requires, among other things, frequent feedback on al
 
 image::xp.png[align="center", title="Feedback loops in Agile on XP example", source="http://en.wikipedia.org/wiki/Extreme_programming"]
 
-As we see from this picture, pair programming is the lowest level feedback loop. It provides instant feedback from a developer to a developer while working on code. Sitting in pairs while programming has proved to lead to higher quality code, better knowledge sharing and mutual encouragement (see http://en.wikipedia.org/wiki/Pair_programming[Pair Programming in Wikipedia]). In BLStream we do pair programming and we found that technique very useful, especially under following circumstances:
+Pair programming is the lowest possible level feedback loop. It provides instant feedback from a developer to a developer while working on code. Sitting in pairs while programming has proved to lead to higher quality code, better knowledge sharing and mutual encouragement (see http://en.wikipedia.org/wiki/Pair_programming[Pair Programming in Wikipedia]). In BLStream we do pair programming and we found that technique very useful, especially under following circumstances:
 
 * Development of an unclear/challening requirement
 * Two people with different set of skills
@@ -196,6 +196,12 @@ As we see from this picture, pair programming is the lowest level feedback loop.
 * New technologies and/or unknown tools
 
 At the same time we found that technique might be inefficient for standard and well understood tasks, when it was obvious what needs to be done or when two people were equal in skills and experience. Also remote work - which is becoming more and more popular these days - makes working in pairs a little harder. Therefore we usually do pair programming for short periods of time, when it makes most sense. Rest of the time we find <<Code Reviews>> sufficient.
+
+Online references:
+
+* http://powersoftwo.agileinstitute.com/2015/02/benefits-of-pair-programming-revisited.html?m=1
+* http://www.extremeprogramming.org/rules/pair.html
+* http://guide.agilealliance.org/guide/pairing.html
 
 [author="Andrzej Bednarz", ver="0.1-DRAFT"]
 === Code Reviews
