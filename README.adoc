@@ -8,6 +8,12 @@ Latest version of generated docs: https://github.com/blstream/BLStream-Fingerpri
 BLStream Fingerprint is a project aimed at describing the core practices we use at BLStream while developing software for our customers. 
 We want this project to be open, easily accessible, fully transparent, therefore we use GitHub for collaborative work and AsciiDoc as publishing format.
 
+== For authors
+
+If you want to update content of the BLStream Fingerprint, you need to have a GitHub account. Then you fork BLStream-Fingerprint repository, make changes in your own copy of the repository and once you are ready, you make pull request to original repository. Your changes after review will be merged to the master repository. So shortly, in order to update the Fingerprint you need to:
+
+fork main repo -> make changes in own repo -> make pull request -> admins will merge changes to the main repo
+
 == Fingerprint conventions
 
 Inspired by http://chimera.labs.oreilly.com/books/1230000000065/ch04.html[O'Reilly guidelines], we need to define our own guidelines to make docs formatting consistent across all articles. That's because we want to be able to merge all articles together and publish book as a single entity. The basic rules are as follows:
