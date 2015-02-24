@@ -75,7 +75,7 @@ For the time being we forget about Python based tools and use AsciiDoctor as the
 
 Firstly, AsciiDoctor *looks nice and modern*, see their http://asciidoctor.org/[home web page]. Secondly, while it is written in Ruby, it can run with Java only and therefore it's *cross-platform*, one script works everywhere and standard Java developer require *no additional software*. Thirdly, *build process is so standard* and easy that no additional software needs to be installed beforehand on CI servers like Jenkins or Travis (Java and Maven are built-in). Last but not least, you can have *life preview* with AsciiDoctorJS (as a plugin to your browser or standalone).
 
-Build is implemented in Maven, see https://github.com/blstream/BLStream-Fingerprint/blob/master/pom.xml[pom.xml] GitHub.
+Build is implemented in Maven, see https://github.com/blstream/BLStream-Fingerprint/blob/master/pom.xml[pom.xml] GitHub. In order to run Maven build, simply write: `mvn` (or `mvn process-resources`).
 
 CI server is Travis-CI, a powerful free service, provides seamless integration with GitHub and, among others, Maven build. You configure https://travis-ci.org/blstream/BLStream-Fingerprint[Travis build] via https://github.com/blstream/BLStream-Fingerprint/blob/master/.travis.yml[.travis.yml] file put to the main directory of your GitHub repo. Build consists of four main steps:
 
