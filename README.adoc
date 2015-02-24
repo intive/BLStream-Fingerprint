@@ -26,18 +26,21 @@ Inspired by http://chimera.labs.oreilly.com/books/1230000000065/ch04.html[O'Reil
  ** Development
  ** Project Management
  ** Quality Assurance
- * Each book part will be held in a separate file. 
- * The parts (and table of contents, index, preface, etc) are merged in a single file called `book.adoc` via `include` directive.
+  * The parts (and table of contents, index, preface, etc) are merged in a single file called `book.adoc` via `include` directive.
  * Your article should start with a title preceded by three equals signs (===) - header level 3. It should also contain author name, version of the article and date of last update, for example:
 
 [source]
 ----
-[author="Andrzej Bednarz", ver="0.1-DRAFT"]
-=== Unit Tests
-
-Unit testing is at the core of engineering practices in BLStream...
-
+=== Unit Tests <1>
+==== View of Andrzej Bednarz <2>
+===== Introduction <3>
+Unit testing is at the core of engineering practices in BLStream... <4>
 ----
+<1> Title of the article
+<2> Author (there could be many authors and each of them can have different opinion)
+<3> First section of current article of current author
+<4> Content of first section
+
 
 == Basic AsciiDoc how-to
 
