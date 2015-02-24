@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>Quality assurance</title>
+<date>2015-02-24</date>
+</info>
+<chapter xml:id="_quality_assurance">
+<title>Quality assurance</title>
+<section xml:id="_radiator">
+<title>Radiator</title>
+
+</section>
+<section xml:id="_defect_tracking_system">
+<title>Defect Tracking System</title>
+
+</section>
+<section xml:id="_defined_bug_lifecycle">
+<title>Defined bug lifecycle</title>
+
+</section>
+<section xml:id="_at_least_1_qa_for_every_4_developers">
+<title>At least 1 QA for every 4 developers</title>
+
+</section>
+<section xml:id="_bug_report_template">
+<title>Bug report template</title>
+
+</section>
+<section xml:id="_bug_triage_meeting">
+<title>Bug triage meeting</title>
+
+</section>
+<section xml:id="_smoke">
+<title>Smoke</title>
+
+</section>
+<section xml:id="_integration">
+<title>Integration</title>
+
+</section>
+<section xml:id="_functional_acceptance">
+<title>Functional / Acceptance</title>
+
+</section>
+<section xml:id="_spelling">
+<title>Spelling</title>
+
+</section>
+<section xml:id="_security">
+<title>Security</title>
+
+</section>
+<section xml:id="_performance">
+<title>Performance</title>
+
+</section>
+<section xml:id="_exploratory">
+<title>Exploratory</title>
+
+</section>
+<section xml:id="_usability">
+<title>Usability</title>
+
+</section>
+<section xml:id="_versioned_repository_of_the_test_scenarios">
+<title>Versioned repository of the test scenarios</title>
+
+</section>
+<section xml:id="_pair_testing">
+<title>Pair testing</title>
+
+</section>
+</chapter>
+</book>
