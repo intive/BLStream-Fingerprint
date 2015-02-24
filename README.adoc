@@ -39,7 +39,7 @@ Unit testing is at the core of engineering practices in BLStream...
 
 ----
 
-== Basic how-to
+== Basic AsciiDoc how-to
 
 Insightful introduction into AsciiDoc: http://asciidoctor.org/docs/asciidoc-writers-guide[AsciiDoctor writers guide].
 Read it to learn:
@@ -54,12 +54,11 @@ For writing we recommend to use just your favourite text editor (Notepad++, Text
 
 == Why the hell we decided to use AsciiDoc
 
-.We wanted:
 * to make writing as simple as possible, as simple as writing an email (unlike LaTeX or DocBook);
 * at the same time powerful enough to be able to publish content as HTML, PDF, ePub or even as a regular, printed paper book 
 (unlike Markdown);
 * a cross-platform tool that primarily focuses on content, formatting can be applied later (unlike MS Word);
-* to have text easy versionable, publicly available, easily editable even directly on web page using only a browser (GitHub);
+* to have text easy versionable, reviewable, publicly available, easily editable even directly on web page using only a browser (GitHub);
 * a standard tool, popular in industry, used by professional publishers, e.g. http://chimera.labs.oreilly.com/about[O'Reilly], https://github.com/aantonop/bitcoinbook[example of professional book].
 
 == Technical details for nerds
