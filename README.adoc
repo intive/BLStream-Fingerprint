@@ -10,7 +10,7 @@ We want this project to be open, easily accessible, fully transparent, therefore
 
 == For authors
 
-Basic intro to content editing (in Polish): https://www.youtube.com/watch?v=ba0PWkabRc4
+Basic intro to content editing (in Polish): https://www.youtube.com/watch?v=ba0PWkabRc4 +
 Advanced (extended) version in English: https://www.youtube.com/watch?v=VyieiFKdAYM
 
 If you want to update content of the BLStream Fingerprint, you need to have a GitHub account. Then you fork BLStream-Fingerprint repository, make changes in your own copy of the repository and once you are ready, you make pull request to original repository. Your changes after review will be merged to the master repository. So shortly, in order to update the Fingerprint you need to:
