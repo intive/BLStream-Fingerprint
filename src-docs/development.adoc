@@ -2,11 +2,10 @@
 
 == Development
 
-[author="Andrzej Bednarz", ver="0.1-DRAFT"]
 === Unit Tests
-
+==== View of Andrzej Bednarz
 ===== Introduction
-Unit testing is at the core of engineering practices in BLStream. It's not just a practice, it is a foundation on which many other, more sophisticated practices are built. Without unit tests it would be impossible to apply techniques like <<Continuous Delivery>> or <<Test Driven Development>> and it would make http://en.wikipedia.org/wiki/Code_refactoring[code refactorings] and generally code maintenance much harder and error prone. 
+Unit testing is at the core of engineering practices. It's not just a practice, it is a foundation on which many other, more sophisticated practices are built. Without unit tests it would be impossible to apply techniques like <<Continuous Delivery>> or <<Test Driven Development>> and it would make http://en.wikipedia.org/wiki/Code_refactoring[code refactorings] and generally code maintenance much harder and error prone. 
 
 ===== What do we understand by unit tests?
 There are many definitions of "unit test" in the industry, see e.g. http://martinfowler.com/bliki/UnitTest.html[Martin Fowler - UnitTest], which makes the term rather confusing. What we understand by unit test is simply: 
@@ -135,9 +134,8 @@ Books:
 . http://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530
 . http://www.amazon.com/xUnit-Test-Patterns-Refactoring-Code/dp/0131495054
 
-[author="Andrzej Bednarz", ver="0.1-DRAFT"]
 === Test Driven Development
-
+==== View of Andrzej Bednarz 
 ===== Introduction
 TDD is a way of developing software in which you write tests first, before implementing a functionality. What kind of tests? It's about unit tests as defined in article <<Unit Tests>>. However, TDD additionally requires to apply a set of rules (details are below). Thanks to TDD you get source code that is fully testable, fully covered by tests, code that you can trust with your life. It means you know exactly what your code is doing (tests are executable spec), you won't be afraid to clean code, improve it, introduce any change. Your team is able to consistently go fast. Sounds great, doesn't it? +
 It is not trivial to write code in TDD manner though, but let's firstly see what exactly we mean by TDD.
@@ -164,7 +162,7 @@ Please note that it means we don't have any separate phase in the project called
 In TDD tests are equally important as production code, therefore the same amount of care and attention is paid to them. 
 
 ===== When to use TDD?
-In BLStream we are not dogmatic about TDD. It is regarded as a good practice and if a team does not follow it, it must have good reason for it. Having said that, our experience is that some areas of software development are very well suited for TDD (algorithmics, finding new solutions), for others it is not very pragmatic (legacy systems, standardized issues - where the implementation is already known) and sometimes even not really possible (front-end stuff like CSS). Nevertheless we *always* write our code having testability in mind and advise to consider TDD in projects.
+We are not dogmatic about TDD. It is regarded as a good practice and if a team does not follow it, it must have good reason for it. Having said that, our experience is that some areas of software development are very well suited for TDD (algorithmics, finding new solutions), for others it is not very pragmatic (legacy systems, standardized issues - where the implementation is already known) and sometimes even not really possible (front-end stuff like CSS). Nevertheless we *always* write our code having testability in mind and advise to consider TDD in projects.
 
 ===== References
 
@@ -181,14 +179,13 @@ Books:
 . http://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627
 
 
-[author="Andrzej Bednarz", ver="0.1-DRAFT"]
 === Pair Programming
-
+==== View of Andrzej Bednarz 
 Agile software development requires, among other things, frequent feedback on all possible levels. There is no better way to get early feedback during software development than pair programming, see figure below.
 
 image::xp.png[align="center", title="Feedback loops in Agile on XP example", source="http://en.wikipedia.org/wiki/Extreme_programming"]
 
-Pair programming is the lowest possible level feedback loop. It provides instant feedback from a developer to a developer while working on code. Sitting in pairs while programming has proved to lead to higher quality code, better knowledge sharing and mutual encouragement (see http://en.wikipedia.org/wiki/Pair_programming[Pair Programming in Wikipedia]). In BLStream we do pair programming and we found that technique very useful, especially under following circumstances:
+Pair programming is the lowest possible level feedback loop. It provides instant feedback from a developer to a developer while working on code. Sitting in pairs while programming has proved to lead to higher quality code, better knowledge sharing and mutual encouragement (see http://en.wikipedia.org/wiki/Pair_programming[Pair Programming in Wikipedia]). We do pair programming and we found that technique very useful, especially under following circumstances:
 
 * Development of an unclear/challening requirement
 * Two people with different set of skills
@@ -203,9 +200,9 @@ Online references:
 * http://www.extremeprogramming.org/rules/pair.html
 * http://guide.agilealliance.org/guide/pairing.html
 
-[author="Andrzej Bednarz", ver="0.1-DRAFT"]
 === Code Reviews
-In BLStream it is obligatory to do either <<Pair Programming>> or code reviews. Both techniques lead to higher quality, fewer bugs, sharing of knowledge and good practices among team members. Therefore, even though they require some investment of time, they lead in fact to higher productivity and lower total cost of the project, see http://en.wikipedia.org/wiki/Code_review[Wikipedia] for references to empirical studies. 
+==== View of Andrzej Bednarz 
+It is obligatory to do either <<Pair Programming>> or code reviews. Both techniques lead to higher quality, fewer bugs, sharing of knowledge and good practices among team members. Therefore, even though they require some investment of time, they lead in fact to higher productivity and lower total cost of the project, see http://en.wikipedia.org/wiki/Code_review[Wikipedia] for references to empirical studies. 
 
 Some time ago the dominating type of code reviews was "over the shoulder". It meant that reviewer had to come to developer's machine as the developer walked through the code. Nowadays the standard way to do code reviews is to use http://git-scm.com[Git SCM] together with some sort of assist tools. Firstly, code developed is usually using https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow[Git feature branches], which makes very easy for the reviewer to get the changed source code and check it in an isolated environment. Secondly, many tools emerged which mimic https://help.github.com/articles/using-pull-requests/[GitHub pull requests]. These tools, e.g. https://www.atlassian.com/software/stash[Atlassian Stash], make use of Git feature branches and provide convenient web interface for both defining and reviewing pull requests. With these tools you can not only see changes to review in a commit-by-commit view, but also you can share comments, ask developer additional questions or even fire a build on CI environment (e.g. Jenkins) with tests, static code analysis, etc. They also allow to define mini-workflows, e.g. "two positive reviews are required before the change can be merged to the main branch". The following picture shows a basic screen for Atlassian Stash.
 
