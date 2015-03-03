@@ -13,7 +13,7 @@ We want this project to be open, easily accessible, fully transparent, therefore
 Basic intro to content editing (in Polish): https://www.youtube.com/watch?v=ba0PWkabRc4 +
 Advanced (extended) version in English: https://www.youtube.com/watch?v=VyieiFKdAYM
 
-If you want to update content of the BLStream Fingerprint, you need to have a GitHub account. Then you fork BLStream-Fingerprint repository, make changes in your own copy of the repository and once you are ready, you make pull request to original repository. Your changes after review will be merged to the master repository. So shortly, in order to update the Fingerprint you need to:
+If you want to update content of the BLStream Fingerprint, you need to have a GitHub account. Then you fork BLStream-Fingerprint repository, make changes in your own copy of the repository and once you are ready, you make a pull request. Your changes after review will be merged to the master repository. So shortly:
 
 *fork main repo -> make changes in your own repo -> make pull request*
 
@@ -27,7 +27,7 @@ Inspired by http://chimera.labs.oreilly.com/books/1230000000065/ch04.html[O'Reil
  ** Project Management
  ** Quality Assurance
   * The parts (and table of contents, index, preface, etc) are merged in a single file called `book.adoc` via `include` directive.
- * Your article should start with a title preceded by three equals signs (===) - header level 3. It should also contain author name, for example:
+ * Your article should start with a title preceded by three equals signs (===) - header level 3. Next, you should give your name starting with four equals signs (====). If needed, you can also add titles to sections of your article using header level five (five equals signs), as on the example below:
 
 [source]
 ----
