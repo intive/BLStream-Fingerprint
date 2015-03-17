@@ -197,6 +197,7 @@ At the same time we found that technique might be inefficient for standard and w
 Online references:
 
 * http://powersoftwo.agileinstitute.com/2015/02/benefits-of-pair-programming-revisited.html?m=1
+* http://blog.jayfields.com/2011/08/life-after-pair-programming.html
 * http://www.extremeprogramming.org/rules/pair.html
 * http://guide.agilealliance.org/guide/pairing.html
 
