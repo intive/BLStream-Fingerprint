@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>Project management</title>
+<date>2015-03-17</date>
+</info>
+<chapter xml:id="_project_management">
+<title>Project management</title>
+<section xml:id="_definition_of_done">
+<title>Definition of Done</title>
+
+</section>
+<section xml:id="_daily_standup">
+<title>Daily Standup</title>
+
+</section>
+<section xml:id="_demo">
+<title>Demo</title>
+
+</section>
+<section xml:id="_scrum_kanban_board">
+<title>Scrum/Kanban Board</title>
+
+</section>
+<section xml:id="_planning_meeting">
+<title>Planning Meeting</title>
+
+</section>
+<section xml:id="_retrospectives">
+<title>Retrospectives</title>
+
+</section>
+<section xml:id="_retrospectives_shared_with_the_customer">
+<title>Retrospectives shared with the customer</title>
+
+</section>
+<section xml:id="_project_practices_charter_shared_with_the_customer">
+<title>Project Practices Charter shared with the customer</title>
+
+</section>
+<section xml:id="_collocated_team_all_team_members_pm_included">
+<title>Collocated Team (all team members PM included)</title>
+
+</section>
+<section xml:id="_3rd_party_libraries_licences_listed_approved">
+<title>3rd party libraries licences listed, approved</title>
+
+</section>
+<section xml:id="_clean_backlog">
+<title>Clean Backlog</title>
+
+</section>
+<section xml:id="_responsive_product_owner">
+<title>Responsive Product Owner</title>
+
+</section>
+<section xml:id="_grooming">
+<title>Grooming</title>
+
+</section>
+<section xml:id="_burnup_burndown_chart">
+<title>BurnUp / BurnDown chart</title>
+
+</section>
+</chapter>
+</book>
