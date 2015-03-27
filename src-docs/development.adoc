@@ -211,6 +211,30 @@ image::Stash-screenshot.png[align="center", title="Stash screenshot", source="ht
 
 Of course tools do not make code review good, they just facilitate it. Teams need to define what exactly need to be checked on code reviews, especially which standards, conventions must be followed (code styles, architecture, GUI guidelines, performance impact, etc.). More on this in subsequent chapters.
 
+=== Static code analysis (backend)
+==== View of Andrzej Bednarz 
+There are three main reasons why we use static code analysis in our projects:
+
+* to find potential bugs
+* to preserve coding conventions, architecture principles and good practices
+* to facilitate reasoning about the code
+
+Implementation details vary across projects and technologies but we found that chosen solution should have the following characteristics:
+
+* Analysis should run automatically as a part of Continuous Integration process.
+* It should be possible to run analysis on developers machines, integrated with IDE preferably.
+* Coding style and architecture evolve in time, therefore is should be easy to change and adapt the rules.
+* The rules definitions should be maintained centrally - so that all team members share exactly the same settings.
+* Results of the analysis should be easy to find and easy to understand, visual preferably.
+* It should be possible to view static code analysis results for deltas, e.g. what issues were introduced in the last commit. 
+* It should be possible to notify the team if some crucial rules are violated. 
+
+If a solution doesn't fulfil most of these requirements, it tends to be ignored by the developers. We also found just limited usefulness of that kind of tools in very small, well organized teams, especially if all members are seniors and proper code review process is in place. 
+
+In the Java world we tried many different solutions, e.g. Checkstyle, FindBugs, PMD, Cobertura, CodePro AnalytiX but recently decided to use http://www.sonarqube.org/[SonarQube] as a standard tool. If more sophisticated solution is required, paid tool http://www.jarchitect.com/[JArchitect] is a good replacement.
+
+
+
 === Integration tests
 
 === Easy infrastructure setup 
@@ -230,8 +254,6 @@ from nothing to running in <1h
 === Scalability requirements known and accounted for
 
 === Performance requirements known and accounted for
-
-=== Static code analysis (backend)
 
 === Application events logging
 
