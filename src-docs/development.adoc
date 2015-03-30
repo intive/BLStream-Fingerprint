@@ -269,7 +269,28 @@ Additionally, we find the following features of SonarQube helpful:
 * Visual tools for analysis: dashbord, drill-down, time machine, incremental (deltas) analysis
 * Alerting
 * Open source - can be extended and adapted (e.g. rules).
+
+Unfortunately, SonarQube (as probably every tool) does not provide full range of metrics we find valuable. We deal with such situations using some other ways, often simple code investigations. For instance SonarQube says nothing about frequency of code changes. It is an important indicator showing "suspicious" places in code which could be badly designed or could contain a lot of bugs.  In such case when working with GIT we use the following simple method:
+
+[source, bash]
+.History of source code changes
+----
+# To get a list of all resources sorted by number of changes:
+
+find . -path ./.git -prune -o -name "*" -exec sh -c 'git log --follow --format=oneline $1 | wc -l | awk "{ print \$1,\"\\t\",\"$1\" }" ' {} {} \; | sort -nr
+
+# To get a list of all changes for give resource (e.g. a directory)
+
+git log resource_name
+
+# Thanks to these simple commands we could draw conclusions which places of the system are changed most frequently and what the histogram is. A lot of changes at the beginning is fine, but equally distributed throughout the lifetime might mean something bad. 
+
+----
  
+===== References
+
+* http://www.sonarqube.org/, SonarQube home page
+* https://www.youtube.com/watch?v=KaLROwp-VDY, Greg Young - "How to get productive in a project in 24h"
 
 === Integration tests
 
