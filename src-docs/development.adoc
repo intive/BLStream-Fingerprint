@@ -235,19 +235,41 @@ Implementation details vary across projects and technologies but we found that c
 If a solution doesn't fulfil most of these requirements, it tends to be ignored by the developers. We also found just limited usefulness of that kind of tools in very small, well organized teams, especially if all members are seniors and proper code review process is in place. 
 
 ===== What
-We look for enabling the following points when we set up static code analysis:
+When we set up static code analysis, we try to cover the following issues:
 
 * Common conventions for used programming languages
 * Common bugs and pitfalls with applied technologies, including security issues
+* Code duplication
 * Design and architecture:
-** Cyclomatic complexity of classes and methods
-** Layering and overall architecture outline (e.g. GUI layer should not call DB directly. )
+** Cyclomatic complexity
+** Internal and external dependencies
+** Layering and architecture principles (e.g. GUI layer should not call DB directly.)
 * Code coverage .footnote:[Strictly speaking, code coverage is a part of dynamic code analysis, nevertheless it is traditionally considered here. We take code coverage as a supportive measure to improve examination of overall code quality. Solely code coverage measure says almost nothing about code quality - i.e. code coverage can be high but code still is not properly tested.]
+* Frequency of source code changes per module/class
 
 ===== Example - SonarQube
-In the Java world we tried many different solutions, e.g. Checkstyle, FindBugs, PMD, Cobertura, CodePro AnalytiX but recently decided to use http://www.sonarqube.org/[SonarQube] as a standard tool. If more sophisticated solution is required, paid tool http://www.jarchitect.com/[JArchitect] is a good replacement.
+In the Java world we tried many different solutions, e.g. Checkstyle, FindBugs, PMD, Cobertura, CodePro AnalytiX but recently decided to use http://www.sonarqube.org/[SonarQube] as a standard tool. If more sophisticated solution is required, paid tool http://www.jarchitect.com/[JArchitect] is a good replacement.  
 
+On the screenshots below, you can see how the aforementioned metrics and checks are implemented with SonarQube.
 
+image::sonar-dashboard.png[align="center", title="SonarQube dashboard"]
+
+image::sonar-issues.png[align="center", title="Issues caught by SonarQube"]
+
+image::sonar-dependencies.png[align="center", title="Dependencies of modules and a cycle indicated in red, SonarQube"]
+
+image::sonar-eclipse.png[align="center", title="SonarQube integration with Eclipse"]
+
+Additionally, we find the following features of SonarQube helpful:
+
+* Predefined reasonable set of rules, including FindBugs, Checkstyle, PMD
+* Smooth integration with Jenkins - a CI server
+* Smooth integration with Eclipse and IntelliJ IDEA. 
+* Centralized and easy rules management
+* Visual tools for analysis: dashbord, drill-down, time machine, incremental (deltas) analysis
+* Alerting
+* Open source - can be extended and adapted (e.g. rules).
+ 
 
 === Integration tests
 
