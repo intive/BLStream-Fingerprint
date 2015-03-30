@@ -213,24 +213,38 @@ Of course tools do not make code review good, they just facilitate it. Teams nee
 
 === Static code analysis (backend)
 ==== View of Andrzej Bednarz 
+
+===== Why
 There are three main reasons why we use static code analysis in our projects:
 
 * to find potential bugs
 * to preserve coding conventions, architecture principles and good practices
 * to facilitate reasoning about the code
 
+===== Characteristic
 Implementation details vary across projects and technologies but we found that chosen solution should have the following characteristics:
 
 * Analysis should run automatically as a part of Continuous Integration process.
-* It should be possible to run analysis on developers machines, integrated with IDE preferably.
-* Coding style and architecture evolve in time, therefore is should be easy to change and adapt the rules.
+* It should also be possible to run analysis on developers machines, integrated with IDE preferably.
+* Coding style and architecture evolve in time, therefore it should be easy to change and adapt the rules of static code analysis.
 * The rules definitions should be maintained centrally - so that all team members share exactly the same settings.
-* Results of the analysis should be easy to find and easy to understand, visual preferably.
+* Results of the analysis should be easy to find and to understand, visual preferably.
 * It should be possible to view static code analysis results for deltas, e.g. what issues were introduced in the last commit. 
-* It should be possible to notify the team if some crucial rules are violated. 
+* It should be possible to automatically notify the team if some crucial rules are violated. 
 
 If a solution doesn't fulfil most of these requirements, it tends to be ignored by the developers. We also found just limited usefulness of that kind of tools in very small, well organized teams, especially if all members are seniors and proper code review process is in place. 
 
+===== What
+We look for enabling the following points when we set up static code analysis:
+
+* Common conventions for used programming languages
+* Common bugs and pitfalls with applied technologies, including security issues
+* Design and architecture:
+** Cyclomatic complexity of classes and methods
+** Layering and overall architecture outline (e.g. GUI layer should not call DB directly. )
+* Code coverage .footnote:[Strictly speaking, code coverage is a part of dynamic code analysis, nevertheless it is traditionally considered here. We take code coverage as a supportive measure to improve examination of overall code quality. Solely code coverage measure says almost nothing about code quality - i.e. code coverage can be high but code still is not properly tested.]
+
+===== Example - SonarQube
 In the Java world we tried many different solutions, e.g. Checkstyle, FindBugs, PMD, Cobertura, CodePro AnalytiX but recently decided to use http://www.sonarqube.org/[SonarQube] as a standard tool. If more sophisticated solution is required, paid tool http://www.jarchitect.com/[JArchitect] is a good replacement.
 
 
@@ -302,5 +316,6 @@ from nothing to running in <1h
 === Version Control System
 
 === Branching strategy
+
 
 
