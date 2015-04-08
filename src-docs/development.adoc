@@ -288,7 +288,7 @@ git log resource_name
 ----
  
 ===== References
-
+* https://gist.github.com/andbed/172082aa9bd7a941113f, - example how to configure and set up basic Ubuntu machine with Sonar and Jenkins.
 * http://www.sonarqube.org/, SonarQube home page
 * https://www.youtube.com/watch?v=KaLROwp-VDY, Greg Young - "How to get productive in a project in 24h"
 
